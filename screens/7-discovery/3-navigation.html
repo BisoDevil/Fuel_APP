@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Voyage Planning Map V3</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f50000",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#230f0f",
+                    },
+                    fontFamily: {
+                        "display": ["Montserrat", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                        'glow': '0 0 20px rgba(245, 0, 0, 0.4)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-color: #0f172a;
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(26, 46, 69, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(15, 23, 42, 0.9) 0%, transparent 50%);
+            overflow: hidden;
+        }
+
+        .route-path {
+            stroke-dasharray: 10;
+            animation: dash 30s linear infinite;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -1000;
+            }
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .dark .glass-panel {
+            background: rgba(35, 15, 15, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100 antialiased overflow-hidden">
+    <div class="relative h-screen w-full flex flex-col">
+        <header
+            class="absolute top-0 left-0 right-0 z-20 px-6 pt-12 pb-4 flex justify-between items-center pointer-events-none">
+            <button
+                class="pointer-events-auto w-10 h-10 rounded-full bg-white/90 dark:bg-background-dark/80 shadow-soft flex items-center justify-center text-gray-800 dark:text-white backdrop-blur-md">
+                <span class="material-icons-round">arrow_back</span>
+            </button>
+            <div class="glass-panel pointer-events-auto px-4 py-2 rounded-full shadow-soft flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <span class="text-sm font-semibold text-gray-900 dark:text-white">Route to St. Barts</span>
+            </div>
+            <button
+                class="pointer-events-auto w-10 h-10 rounded-full bg-white/90 dark:bg-background-dark/80 shadow-soft flex items-center justify-center text-gray-800 dark:text-white backdrop-blur-md">
+                <span class="material-icons-round">more_vert</span>
+            </button>
+        </header>
+        <div class="absolute inset-0 z-0 map-container">
+            <img alt="Map Background" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay"
+                data-alt="Dark satellite view of ocean and islands from space"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSdS5OVolqUQ5fG38XlAG3L0mynGlIDVLUQlXiTvXo41nFunZ214BdVawp3vVMX8wk4REokH2pLACGwMpXRBahLTuMAQeRO8aQq-_Ly4EspMCQO946jrx3lfedgFmisNVv5gqHS520_qeSi7V6neT_VliVfEoBSEjCLK7RFYrwwGJzMmpdwtoWDBqGgjLlclhDSPFIs25g78On7Z1NLSRS9nhPqEVcxAysL1x6VeXYxqElwvQuCcgxZBaKf9QJnG2uo0pe_j_pNcw" />
+            <div class="absolute inset-0 opacity-10"
+                style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 80px 80px;">
+            </div>
+            <svg class="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="routeGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+                        <stop offset="0%" stop-color="#f50000" stop-opacity="0.2"></stop>
+                        <stop offset="50%" stop-color="#f50000" stop-opacity="1"></stop>
+                        <stop offset="100%" stop-color="#f50000" stop-opacity="0.2"></stop>
+                    </linearGradient>
+                    <filter id="glow">
+                        <feGaussianBlur result="coloredBlur" stdDeviation="3"></feGaussianBlur>
+                        <feMerge>
+                            <feMergeNode in="coloredBlur"></feMergeNode>
+                            <feMergeNode in="SourceGraphic"></feMergeNode>
+                        </feMerge>
+                    </filter>
+                </defs>
+                <path class="route-path" d="M 100,600 Q 200,450 180,350 T 280,150" fill="none" filter="url(#glow)"
+                    stroke="#f50000" stroke-linecap="round" stroke-width="3"></path>
+                <g transform="translate(85, 585)">
+                    <circle class="animate-ping" cx="15" cy="15" fill="#f50000" fill-opacity="0.15" r="30"></circle>
+                    <circle cx="15" cy="15" fill="#fff" r="8" stroke="#f50000" stroke-width="4"></circle>
+                </g>
+                <g transform="translate(265, 120)">
+                    <circle cx="15" cy="30" fill="#f50000" r="6"></circle>
+                    <path d="M15 30 L15 30 Q15 5 5 5 L25 5 Q15 5 15 30" fill="#f50000" opacity="0.4"></path>
+                    <circle cx="15" cy="30" fill="none" r="12" stroke="#f50000" stroke-width="2"></circle>
+                </g>
+            </svg>
+            <div
+                class="absolute top-[140px] left-[290px] bg-white/90 dark:bg-background-dark/90 backdrop-blur px-3 py-1 rounded-lg shadow-sm">
+                <p class="text-xs font-bold uppercase tracking-wider text-gray-800 dark:text-white">St. Barts</p>
+                <p class="text-[10px] text-gray-500">Gustavia Harbor</p>
+            </div>
+        </div>
+        <div class="relative z-10 w-full mt-auto">
+            <div class="px-4 pb-8">
+                <div class="glass-panel rounded-xl p-5 shadow-soft">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-900 dark:text-white">Voyage Summary</h2>
+                            <p class="text-sm text-gray-500 mt-1 flex items-center gap-1">
+                                <span class="material-icons-round text-base">near_me</span> 142 NM total distance
+                            </p>
+                        </div>
+                        <div
+                            class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-1 rounded text-xs font-bold uppercase tracking-wide">
+                            Optimal Conditions
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3 mb-6">
+                        <div
+                            class="bg-background-light dark:bg-white/5 p-3 rounded-lg flex flex-col items-center justify-center text-center border border-gray-100 dark:border-white/5">
+                            <span class="material-icons-round text-gray-400 dark:text-gray-500 mb-1">schedule</span>
+                            <span class="text-xs text-gray-500 uppercase tracking-wide font-semibold">ETA</span>
+                            <span class="text-lg font-bold text-gray-800 dark:text-white">14:30</span>
+                        </div>
+                        <div
+                            class="bg-background-light dark:bg-white/5 p-3 rounded-lg flex flex-col items-center justify-center text-center border border-gray-100 dark:border-white/5 relative overflow-hidden">
+                            <span class="material-icons-round text-primary mb-1">local_gas_station</span>
+                            <span class="text-xs text-gray-500 uppercase tracking-wide font-semibold">Fuel</span>
+                            <span class="text-lg font-bold text-gray-800 dark:text-white">450L</span>
+                            <div class="absolute bottom-0 left-0 h-1 bg-primary w-3/4"></div>
+                        </div>
+                        <div
+                            class="bg-background-light dark:bg-white/5 p-3 rounded-lg flex flex-col items-center justify-center text-center border border-gray-100 dark:border-white/5">
+                            <span class="material-icons-round text-gray-400 dark:text-gray-500 mb-1"
+                                style="transform: rotate(-45deg);">air</span>
+                            <span class="text-xs text-gray-500 uppercase tracking-wide font-semibold">Wind</span>
+                            <span class="text-lg font-bold text-gray-800 dark:text-white">12<span
+                                    class="text-xs font-normal ml-0.5">kts</span></span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-primary/5 border border-primary/20 rounded-lg mb-6">
+                        <span class="material-icons-round text-primary text-sm">info</span>
+                        <p class="text-xs text-gray-600 dark:text-gray-300">
+                            Light chop expected near Anguilla channel.
+                        </p>
+                    </div>
+                    <button
+                        class="w-full bg-primary hover:bg-red-700 active:bg-red-800 text-white font-bold py-4 px-6 rounded-lg shadow-glow transition-all duration-200 flex items-center justify-center gap-2 group">
+                        <span>Confirm Voyage</span>
+                        <span
+                            class="material-icons-round group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

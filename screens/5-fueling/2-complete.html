@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Start Fueling - Capture Meter V3</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script
+        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#f50000", "primary-dark": "#d40000", "background-light": "#f8f5f5", "background-dark": "#230f0f" }, fontFamily: { display: "Montserrat" }, borderRadius: { DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px" }, animation: { "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite", "ping-slow": "ping 2s cubic-bezier(0, 0, 0.2, 1) infinite" } } } };</script>
+    <style>
+        /* Custom styles for camera grid overlay */
+        .camera-grid {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+            background-size: 33.33% 33.33%;
+            background-position: center;
+        }
+
+        /* Hide scrollbar for clean UI */
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-100 h-screen w-full flex flex-col overflow-hidden relative selection:bg-primary selection:text-white">
+    <!-- Top Half: Camera Viewport -->
+    <div class="relative h-[60%] w-full bg-black overflow-hidden z-0 rounded-b-3xl shadow-2xl">
+        <!-- Camera Feed Simulation (Image Background) -->
+        <div class="absolute inset-0 bg-cover bg-center opacity-80"
+            data-alt="Close up view of a fuel pump digital display meter showing gallons and price"
+            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDGGxxWvEJhSyFUNaZdG9z-JZ3UH-L4d6HocCjNkUhtt_8VSBEBo71uA4DyWacWiyUSIM3AmX8T9Dq3mDOacUkRxPStU4J_-LLKoE08ovID3K4x6uYCL7tr2DzwxuTF5hMMbk7lSqHXDGwWzLwZXGtQGCz1gNZebFvPkW9kCsUEsTxbrYk4JQ3Ao67tqeRQ4FZHqjUky8cYyTbbrCQP0oayzAlw6aFtHK9dz-1zkKBJ4ze1m9Go1DZsGftQxcHMV5XZtBM8bQrUUiE');">
+        </div>
+        <!-- Grid Overlay -->
+        <div class="absolute inset-0 camera-grid pointer-events-none opacity-30"></div>
+        <!-- Dark Gradient Overlay for Readability -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60 pointer-events-none">
+        </div>
+        <!-- Header Overlay -->
+        <div class="absolute top-0 left-0 right-0 p-6 pt-12 flex justify-between items-center z-20">
+            <button
+                class="bg-white/20 backdrop-blur-md hover:bg-white/30 text-white rounded-full p-2 transition-all active:scale-95">
+                <span class="material-icons-round text-2xl">arrow_back</span>
+            </button>
+            <h1 class="text-white font-bold text-lg tracking-wide uppercase drop-shadow-md">Start Fueling</h1>
+            <button
+                class="bg-white/20 backdrop-blur-md hover:bg-white/30 text-white rounded-full p-2 transition-all active:scale-95">
+                <span class="material-icons-round text-2xl">flash_on</span>
+            </button>
+        </div>
+        <!-- Focus Reticle Animation -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+            <div class="relative w-64 h-32 border-2 border-white/50 rounded-lg flex items-center justify-center">
+                <!-- Corner Brackets -->
+                <div class="absolute -top-1 -left-1 w-6 h-6 border-t-4 border-l-4 border-primary rounded-tl-lg"></div>
+                <div class="absolute -top-1 -right-1 w-6 h-6 border-t-4 border-r-4 border-primary rounded-tr-lg"></div>
+                <div class="absolute -bottom-1 -left-1 w-6 h-6 border-b-4 border-l-4 border-primary rounded-bl-lg">
+                </div>
+                <div class="absolute -bottom-1 -right-1 w-6 h-6 border-b-4 border-r-4 border-primary rounded-br-lg">
+                </div>
+                <!-- Pulsing Center -->
+                <div class="w-16 h-1 bg-primary rounded-full animate-pulse shadow-[0_0_15px_rgba(245,0,0,0.6)]"></div>
+            </div>
+            <p
+                class="absolute mt-48 text-white/90 text-sm font-medium bg-black/40 backdrop-blur-sm px-4 py-1 rounded-full border border-white/10">
+                Align meter within grid</p>
+        </div>
+        <!-- Bottom Left Floating Action inside Camera -->
+        <div class="absolute bottom-6 left-6 z-20">
+            <button
+                class="bg-black/40 backdrop-blur-md border border-white/20 hover:bg-black/60 text-white rounded-xl p-3 flex items-center gap-2 transition-all active:scale-95 group">
+                <span
+                    class="material-icons-round text-xl text-primary-300 group-hover:text-primary">photo_library</span>
+                <span class="text-xs font-semibold uppercase tracking-wider pr-1">Gallery</span>
+            </button>
+        </div>
+    </div>
+    <!-- Bottom Half: Controls & Info -->
+    <div
+        class="relative h-[40%] w-full bg-background-light dark:bg-background-dark -mt-6 pt-10 px-6 pb-8 flex flex-col justify-between z-10 rounded-t-3xl shadow-[0_-10px_40px_rgba(0,0,0,0.2)]">
+        <!-- Drag Handle Indicator -->
+        <div
+            class="absolute top-3 left-1/2 transform -translate-x-1/2 w-12 h-1.5 bg-gray-300 dark:bg-gray-700 rounded-full">
+        </div>
+        <!-- Station Info Card -->
+        <div
+            class="bg-white dark:bg-[#2a1212] rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-white/5 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div
+                    class="w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary">
+                    <span class="material-icons-round text-2xl">local_gas_station</span>
+                </div>
+                <div>
+                    <h3 class="text-xs font-bold text-primary tracking-wider uppercase mb-0.5">Current Station</h3>
+                    <p class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Port Hercules</p>
+                    <div class="flex items-center gap-2 mt-1">
+                        <span class="text-sm font-medium text-slate-500 dark:text-slate-400">Pump #04</span>
+                        <span class="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600"></span>
+                        <span
+                            class="text-xs font-bold bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded text-center">Diesel</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col items-end">
+                <button class="text-slate-400 hover:text-primary dark:text-slate-500 transition-colors">
+                    <span class="material-icons-round">edit</span>
+                </button>
+            </div>
+        </div>
+        <!-- Spacer -->
+        <div class="flex-grow"></div>
+        <!-- Primary Action Button Container -->
+        <div class="w-full relative group">
+            <!-- Pulsing ring effect behind button -->
+            <div
+                class="absolute -inset-1 bg-primary/30 rounded-full blur opacity-40 group-hover:opacity-60 transition duration-500 animate-pulse">
+            </div>
+            <button
+                class="relative w-full bg-primary hover:bg-primary-dark text-white rounded-full py-5 px-6 shadow-lg shadow-primary/30 active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-3">
+                <div class="p-1 bg-white/20 rounded-full">
+                    <span class="material-icons-round text-xl block">camera</span>
+                </div>
+                <span class="text-lg font-bold tracking-wide uppercase">Capture &amp; Start</span>
+            </button>
+            <p class="text-center mt-4 text-xs font-medium text-slate-400 dark:text-slate-500">
+                Ensure fuel meter digits are clearly visible
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>My Yachts List V1</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f50000",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#230f0f",
+                        "neutral-surface": "#ffffff",
+                        "neutral-surface-dark": "#2a1212",
+                    },
+                    fontFamily: {
+                        "display": ["Montserrat", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(245, 0, 0, 0.05)',
+                        'card': '0 10px 40px -10px rgba(0, 0, 0, 0.05)',
+                        'floating': '0 20px 40px -5px rgba(0, 0, 0, 0.15)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Hide scrollbar for clean look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Custom safe area for bottom nav */
+        .safe-area-bottom {
+            padding-bottom: max(6rem, env(safe-area-inset-bottom));
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100 antialiased min-h-screen relative overflow-hidden flex flex-col items-center">
+    <!-- Main Container - Mobile Form Factor -->
+    <main
+        class="w-full max-w-md h-full min-h-screen relative bg-background-light dark:bg-background-dark flex flex-col shadow-2xl overflow-hidden">
+        <!-- Status Bar Area (Simulated) -->
+        <div class="h-12 w-full flex items-center justify-between px-6 pt-2 z-20">
+            <span class="text-sm font-semibold dark:text-white">9:41</span>
+            <div class="flex gap-2 text-sm dark:text-white">
+                <span class="material-icons-round text-base">signal_cellular_alt</span>
+                <span class="material-icons-round text-base">wifi</span>
+                <span class="material-icons-round text-base">battery_full</span>
+            </div>
+        </div>
+        <!-- Header -->
+        <header class="px-6 pt-4 pb-2 z-10">
+            <div class="flex justify-between items-center mb-6">
+                <button class="p-2 -ml-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                    <span class="material-icons-round text-2xl dark:text-white">menu</span>
+                </button>
+                <div
+                    class="h-10 w-10 rounded-full bg-primary/10 overflow-hidden border-2 border-white dark:border-background-dark shadow-sm">
+                    <img alt="Profile" class="h-full w-full object-cover" data-alt="User profile portrait"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu_krDf5T-DQSTem8KjM59PrlWxSys8Ue3UJutlkYCn7lKDwF6D3xki_SiGdzbIIpMkY189QaDUawCVlxDtGThYI-DV0Jz-JHkmtINiqbQndphtsBJzhpSnFUstr5rziLBnQihNeRM7aQvMPPyWLh5xOLN2P6koY67rn_RIGRYS7b0c1aOkZLMZDGgswQj7A2z7tbx8rxUJhifZfl1mlEdF3WB1fvPofuFugsbV3_jTPx7-CknazqEwakgeB5mnmC0rWWUpUUpVWY" />
+                </div>
+            </div>
+            <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+                My <span class="text-primary">Yachts</span>
+            </h1>
+            <p class="text-gray-500 dark:text-gray-400 mt-1 text-sm font-medium">Manage your personal fleet</p>
+        </header>
+        <!-- Scrollable Content -->
+        <div class="flex-1 overflow-y-auto no-scrollbar px-6 pt-2 safe-area-bottom z-0">
+            <!-- Yacht Card 1 -->
+            <article
+                class="bg-white dark:bg-neutral-surface-dark rounded-xl shadow-card mb-6 overflow-hidden group transform transition-transform active:scale-[0.98]">
+                <div class="relative h-48 w-full overflow-hidden">
+                    <img alt="Black Pearl Yacht"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        data-alt="Luxury sailing yacht on water side profile"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMFZ5th029qs68p0vjUdDnq2Hy1kewc-1eIgEpVqVqW4fXgwjWRXnZ4teX1wAlwTPPhBEaKHJjr7uj569ilQ8f9h1jId_GLSsXxaq2-CRgKLWJVpS1MNYPTSpG3vzTpHdz8XwQM6zP7oV8TrQm6d8yVujyrNXqLfzJNyEW1kYU5UnjJc0Q-r-Jazwe58D5JvmNzRJOVOa2sG8rjGv8IdUZpJVCxbSYzu6dhhFnZLBv87J0XiP-NlvXkZNppW4qArTE8RmxoIlIseg" />
+                    <div class="absolute top-4 right-4">
+                        <span
+                            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-white/90 dark:bg-black/80 text-primary backdrop-blur-sm shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
+                            In Port · Monaco
+                        </span>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-900 dark:text-white leading-tight">Black Pearl</h2>
+                            <p class="text-xs font-semibold text-primary uppercase tracking-wider mt-1">Sailing Yacht
+                            </p>
+                        </div>
+                        <button class="text-gray-300 hover:text-primary transition-colors">
+                            <span class="material-icons-round">more_vert</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mt-3 space-x-4">
+                        <span class="flex items-center"><span
+                                class="material-icons-round text-base mr-1 text-primary/60">straighten</span>
+                            106m</span>
+                        <span class="flex items-center"><span
+                                class="material-icons-round text-base mr-1 text-primary/60">event</span> 2018</span>
+                        <span class="flex items-center"><span
+                                class="material-icons-round text-base mr-1 text-primary/60">group</span> 12
+                            Guests</span>
+                    </div>
+                </div>
+            </article>
+            <!-- Yacht Card 2 -->
+            <article
+                class="bg-white dark:bg-neutral-surface-dark rounded-xl shadow-card mb-6 overflow-hidden group transform transition-transform active:scale-[0.98]">
+                <div class="relative h-48 w-full overflow-hidden">
+                    <img alt="Eclipse Yacht"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        data-alt="Sleek white motor yacht side view"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOG-ybEmdKD3gbSKp04j-0HwozlFJFKBieSnLkBZzy3WdTRu7ESe_Rs0rDPKnKmrGOXUzrRkHdf77SjBJBVSxz3PW9T5oCubSab8WTkD1K6OHEjCGLXx5z4H-QvtZOyS-gN7cED2a5kzZx184tUcgGR1B8lRgz1QBnI_9iLszWDuS4jPlQAyY46LM1vjfW85y0n3BNlh5tdj9BUe6mbd5obFMLwXxnAdKWsXrac1vXtzM9IpdjPJg5i2WJ_4As8fGpAjz7oPlWCoE" />
+                    <div class="absolute top-4 right-4">
+                        <span
+                            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-white/90 dark:bg-black/80 text-blue-600 backdrop-blur-sm shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-blue-500 mr-2"></span>
+                            At Sea
+                        </span>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-900 dark:text-white leading-tight">Eclipse</h2>
+                            <p class="text-xs font-semibold text-primary uppercase tracking-wider mt-1">Motor Yacht</p>
+                        </div>
+                        <button class="text-gray-300 hover:text-primary transition-colors">
+                            <span class="material-icons-round">more_vert</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mt-3 space-x-4">
+                        <span class="flex items-center"><span
+                                class="material-icons-round text-base mr-1 text-primary/60">straighten</span>
+                            162m</span>
+                        <span class="flex items-center"><span
+                                class="material-icons-round text-base mr-1 text-primary/60">event</span> 2010</span>
+                        <span class="flex items-center"><span
+                                class="material-icons-round text-base mr-1 text-primary/60">group</span> 36
+                            Guests</span>
+                    </div>
+                </div>
+            </article>
+            <!-- Yacht Card 3 -->
+            <article
+                class="bg-white dark:bg-neutral-surface-dark rounded-xl shadow-card mb-6 overflow-hidden group transform transition-transform active:scale-[0.98]">
+                <div class="relative h-48 w-full overflow-hidden">
+                    <img alt="Dilbar Yacht"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        data-alt="Massive beige luxury yacht on calm water"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4lRtpTFrln-IY-zWblzXCIPvFduZMhDt1d9B33yFHpm86T9mWeiViYN1rdzbI81RtYSnhCYADS8XgcKXa8z16cxGxADuD8La2YiajI8noIy7xqmPHj64nphUNaeFkJXhLntpTWCZ0p9atCil_egkJ8V4xheLuFz-wCygQrtq98PjhtJj9OudyvYRtzs9C1AKiXnEjT9MPwmleHkhi7LmbvRKKiR035UTIZrQhTAqjE9fBwHmu3d9I4VObEgT1GXktkn_GbcUuXsg" />
+                    <div class="absolute top-4 right-4">
+                        <span
+                            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-white/90 dark:bg-black/80 text-orange-500 backdrop-blur-sm shadow-sm">
+                            <span class="material-icons-round text-[10px] mr-1">build</span>
+                            Maintenance
+                        </span>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-900 dark:text-white leading-tight">Dilbar</h2>
+                            <p class="text-xs font-semibold text-primary uppercase tracking-wider mt-1">Motor Yacht</p>
+                        </div>
+                        <button class="text-gray-300 hover:text-primary transition-colors">
+                            <span class="material-icons-round">more_vert</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mt-3 space-x-4">
+                        <span class="flex items-center"><span
+                                class="material-icons-round text-base mr-1 text-primary/60">straighten</span>
+                            156m</span>
+                        <span class="flex items-center"><span
+                                class="material-icons-round text-base mr-1 text-primary/60">event</span> 2016</span>
+                        <span class="flex items-center"><span
+                                class="material-icons-round text-base mr-1 text-primary/60">group</span> 24
+                            Guests</span>
+                    </div>
+                </div>
+            </article>
+            <!-- Bottom Spacer -->
+            <div class="h-24"></div>
+        </div>
+        <!-- Floating Action Button (FAB) -->
+        <button
+            class="absolute bottom-28 right-6 z-40 bg-primary text-white p-4 rounded-full shadow-lg hover:bg-red-700 hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center">
+            <span class="material-icons-round text-2xl">add</span>
+        </button>
+        <!-- Floating Triple-Bubble Navigation Bar -->
+        <nav class="absolute bottom-8 left-0 right-0 z-50 flex justify-center px-6 pointer-events-none">
+            <div
+                class="bg-white dark:bg-neutral-surface-dark/90 backdrop-blur-md rounded-full px-2 py-2 shadow-floating flex items-center gap-1 pointer-events-auto border border-white/20 dark:border-white/5">
+                <!-- Nav Item: Dashboard -->
+                <a class="h-12 w-12 flex items-center justify-center rounded-full text-gray-400 hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
+                    href="#">
+                    <span class="material-icons-round text-2xl">grid_view</span>
+                </a>
+                <!-- Nav Item: Active (Yachts) -->
+                <a class="h-12 px-6 flex items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-red-500/30"
+                    href="#">
+                    <span class="material-icons-round text-2xl mr-2">directions_boat</span>
+                    <span class="font-bold text-sm">Fleet</span>
+                </a>
+                <!-- Nav Item: Settings -->
+                <a class="h-12 w-12 flex items-center justify-center rounded-full text-gray-400 hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
+                    href="#">
+                    <span class="material-icons-round text-2xl">settings</span>
+                </a>
+            </div>
+        </nav>
+        <!-- Decorative Background Elements (Subtle) -->
+        <div
+            class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full filter blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none z-0">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-48 h-48 bg-primary/5 rounded-full filter blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none z-0">
+        </div>
+    </main>
+</body>
+
+</html>

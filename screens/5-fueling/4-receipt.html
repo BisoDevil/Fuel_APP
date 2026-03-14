@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Fueling Receipt - Sport V3</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f50000",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#230f0f",
+                    },
+                    fontFamily: {
+                        "display": ["Montserrat", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'sport': '0 10px 15px -3px rgba(245, 0, 0, 0.1), 0 4px 6px -2px rgba(245, 0, 0, 0.05)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100 antialiased min-h-screen flex flex-col items-center">
+    <!-- Mobile Container -->
+    <main
+        class="w-full max-w-md bg-background-light dark:bg-background-dark min-h-screen relative flex flex-col shadow-2xl overflow-hidden">
+        <!-- Header -->
+        <header class="px-6 py-6 flex items-center justify-between z-10">
+            <button
+                class="w-10 h-10 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center shadow-sm hover:bg-gray-50 transition-colors">
+                <span class="material-icons-round text-gray-600 dark:text-gray-300">close</span>
+            </button>
+            <h1 class="text-lg font-bold tracking-tight">Receipt #4029</h1>
+            <button
+                class="w-10 h-10 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center shadow-sm hover:bg-gray-50 transition-colors">
+                <span class="material-icons-round text-primary">ios_share</span>
+            </button>
+        </header>
+        <!-- Content Scrollable Area -->
+        <div class="flex-1 overflow-y-auto px-6 pb-24 space-y-6">
+            <!-- Title Section -->
+            <div class="text-center pt-2">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                    <span class="material-icons-round text-primary text-3xl">check_circle</span>
+                </div>
+                <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white uppercase tracking-wide">Refill
+                    Complete</h2>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Monaco Marine Station • June 14, 10:45 AM</p>
+            </div>
+            <!-- Summary Card -->
+            <div
+                class="bg-white dark:bg-gray-800 rounded-xl shadow-sport p-6 relative overflow-hidden border-l-4 border-primary">
+                <!-- Decorative background elements -->
+                <div class="absolute -right-10 -top-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl"></div>
+                <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Session Summary</h3>
+                <div class="grid grid-cols-2 gap-y-8 gap-x-4">
+                    <!-- Volume Stat -->
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="material-icons-round text-primary text-xl">water_drop</span>
+                            <span class="text-xs font-semibold text-gray-400 uppercase">Volume</span>
+                        </div>
+                        <span class="text-2xl font-bold text-gray-900 dark:text-white">12,500 <span
+                                class="text-sm font-medium text-gray-500">L</span></span>
+                    </div>
+                    <!-- Time Stat -->
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="material-icons-round text-primary text-xl">schedule</span>
+                            <span class="text-xs font-semibold text-gray-400 uppercase">Duration</span>
+                        </div>
+                        <span class="text-2xl font-bold text-gray-900 dark:text-white">45<span
+                                class="text-sm font-medium text-gray-500">m</span> 20<span
+                                class="text-sm font-medium text-gray-500">s</span></span>
+                    </div>
+                    <!-- Cost Stat (Full Width) -->
+                    <div class="col-span-2 pt-4 border-t border-dashed border-gray-200 dark:border-gray-700 mt-2">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="material-icons-round text-primary text-xl">account_balance_wallet</span>
+                                <span class="text-xs font-semibold text-gray-400 uppercase">Total Paid</span>
+                            </div>
+                            <span class="text-3xl font-extrabold text-primary">€21,420.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Detailed Breakdown -->
+            <div class="space-y-4">
+                <h3 class="text-sm font-bold text-gray-900 dark:text-white ml-1">Payment Breakdown</h3>
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-5 shadow-sm space-y-3">
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-gray-500 dark:text-gray-400">Fuel Base Price (€1.40/L)</span>
+                        <span class="font-medium text-gray-900 dark:text-white">€17,500.00</span>
+                    </div>
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-gray-500 dark:text-gray-400">Marina Service Fee (2%)</span>
+                        <span class="font-medium text-gray-900 dark:text-white">€350.00</span>
+                    </div>
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-gray-500 dark:text-gray-400">VAT (20%)</span>
+                        <span class="font-medium text-gray-900 dark:text-white">€3,570.00</span>
+                    </div>
+                    <div class="h-px bg-gray-100 dark:bg-gray-700 my-2"></div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-base font-bold text-gray-900 dark:text-white">Grand Total</span>
+                        <span class="text-lg font-bold text-gray-900 dark:text-white">€21,420.00</span>
+                    </div>
+                    <div class="flex justify-between items-center mt-1">
+                        <span class="text-xs text-gray-400">Paid with VISA •••• 4242</span>
+                        <span class="material-icons-round text-gray-400 text-sm">receipt</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Review Station -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-5 shadow-sm flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-lg bg-gray-100 dark:bg-gray-700 overflow-hidden relative">
+                        <img class="w-full h-full object-cover" data-alt="Monaco marina harbor view with yachts"
+                            data-location="Monaco"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM9viNllOq_e6gRWUFzjLMjxzf7GjzE-KXqYhJ5hN7USs1WbnWI5yNMU7XUsbH439Kw9jQVoshB4klUNqHSeHDE4kSyuzzyCqPyRSrL8CKOoGfQfR_MCiYYOi0xw_OC1Ou_RtgidWIAt9I-AId0UcVVuGKJK77BijnexXXQqLVZ61uyM_2WHB6HmnPlYN6KL7-MEtz2VJcirNe-HB0myLSpBLQ5_sNSvsa_-e6Giwi5EYUdfwo8xEPKvp8xpXTtw2SDNK_NGMF2vg" />
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold text-gray-900 dark:text-white">Monaco Marine</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Rate your experience</p>
+                    </div>
+                </div>
+                <div class="flex gap-1">
+                    <span class="material-icons-round text-primary text-lg cursor-pointer">star</span>
+                    <span class="material-icons-round text-primary text-lg cursor-pointer">star</span>
+                    <span class="material-icons-round text-primary text-lg cursor-pointer">star</span>
+                    <span class="material-icons-round text-primary text-lg cursor-pointer">star</span>
+                    <span
+                        class="material-icons-round text-gray-300 dark:text-gray-600 text-lg cursor-pointer hover:text-primary transition-colors">star</span>
+                </div>
+            </div>
+        </div>
+        <!-- Sticky Footer Action -->
+        <div
+            class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark pt-12">
+            <button
+                class="w-full bg-primary hover:bg-red-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-red-500/30 active:scale-[0.98] transition-all transform flex items-center justify-center gap-2">
+                <span>Finish</span>
+                <span class="material-icons-round text-sm">arrow_forward</span>
+            </button>
+        </div>
+    </main>
+</body>
+
+</html>

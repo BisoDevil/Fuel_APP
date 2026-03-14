@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Pilot View Navigation</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f50000",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#230f0f",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">.map-bg {
+            background-color: #e6f3f7;
+            background-image: 
+                radial-gradient(#b8dbe6 1px, transparent 1px),
+                linear-gradient(to right, #ffffff 1px, transparent 1px),
+                linear-gradient(to bottom, #ffffff 1px, transparent 1px);
+            background-size: 40px 40px, 80px 80px, 80px 80px;
+        }.glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .dark .glass-panel {
+            background: rgba(35, 15, 15, 0.7);
+        }.hud-line {
+            @apply border-primary/30 border-t;
+            width: 100%;
+            height: 1px;
+        }
+    </style>
+
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-[#1d0c0c] h-screen overflow-hidden flex flex-col relative">
+    <div class="absolute inset-0 z-0 map-bg w-full h-full overflow-hidden">
+        <div
+            class="absolute top-0 right-0 w-[70%] h-full bg-[#f2e6e6] dark:bg-[#3a2a2a] opacity-40 skew-x-6 origin-top-right">
+        </div>
+        <svg class="absolute inset-0 w-full h-full z-10" preserveAspectRatio="xMidYMid slice" viewBox="0 0 375 812">
+            <path d="M187,700 Q187,400 280,150" fill="none" opacity="0.8" stroke="#f50000" stroke-dasharray="10,6"
+                stroke-linecap="round" stroke-width="3"></path>
+            <circle cx="187" cy="700" fill="#f50000" r="6"></circle>
+            <circle class="animate-pulse" cx="187" cy="700" fill="none" r="14" stroke="#f50000"></circle>
+            <circle cx="280" cy="150" fill="#f50000" r="6"></circle>
+            <circle cx="280" cy="150" fill="#f50000" fill-opacity="0.2" r="20"></circle>
+        </svg>
+        <div class="absolute left-[280px] top-[140px] transform -translate-x-1/2 -translate-y-full z-20">
+            <div
+                class="glass-panel px-3 py-1.5 rounded-lg border border-white/20 shadow-sm text-[10px] font-bold text-primary whitespace-nowrap uppercase tracking-widest">
+                Target: Port Hercules
+            </div>
+        </div>
+        <div class="absolute left-1/2 top-[15%] -translate-x-1/2 z-20 w-[85%] max-w-sm">
+            <div
+                class="glass-panel border border-white/30 rounded-full px-6 py-3 flex items-center justify-between shadow-xl">
+                <div class="flex flex-col">
+                    <span class="text-[9px] uppercase tracking-tighter text-gray-500 font-bold">Origin</span>
+                    <span class="text-sm font-bold dark:text-white">Antibes, FR</span>
+                </div>
+                <div class="px-4">
+                    <span class="material-symbols-outlined text-primary text-xl">east</span>
+                </div>
+                <div class="flex flex-col items-end">
+                    <span class="text-[9px] uppercase tracking-tighter text-primary font-bold">Destination</span>
+                    <span class="text-sm font-bold dark:text-white text-right">Port Hercules</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="absolute right-4 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-4">
+        <button
+            class="size-10 glass-panel rounded-lg flex items-center justify-center text-gray-700 dark:text-white/80 border border-white/20">
+            <span class="material-symbols-outlined text-xl">add</span>
+        </button>
+        <button
+            class="size-10 glass-panel rounded-lg flex items-center justify-center text-gray-700 dark:text-white/80 border border-white/20">
+            <span class="material-symbols-outlined text-xl">remove</span>
+        </button>
+        <button
+            class="size-10 glass-panel rounded-lg flex items-center justify-center text-primary border border-white/20">
+            <span class="material-symbols-outlined text-xl">explore</span>
+        </button>
+    </div>
+    <div class="absolute bottom-0 inset-x-0 z-30 p-6">
+        <div
+            class="glass-panel border border-white/40 rounded-2xl p-4 shadow-2xl flex items-center gap-6 overflow-hidden">
+            <div class="flex gap-6 items-center flex-1">
+                <div class="flex flex-col">
+                    <span class="text-[8px] font-bold text-gray-500 uppercase tracking-widest">ETA</span>
+                    <span class="text-lg font-bold dark:text-white tabular-nums">14:30</span>
+                </div>
+                <div class="h-8 w-px bg-gray-300/50"></div>
+                <div class="flex flex-col">
+                    <span class="text-[8px] font-bold text-gray-500 uppercase tracking-widest">Dist</span>
+                    <span class="text-lg font-bold dark:text-white tabular-nums">12.4<span
+                            class="text-xs font-medium ml-1">NM</span></span>
+                </div>
+            </div>
+            <button
+                class="bg-primary hover:bg-red-600 text-white px-6 h-12 rounded-xl font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all active:scale-95 shadow-lg shadow-red-500/20">
+                <span class="material-symbols-outlined text-lg">navigation</span>
+                Start
+            </button>
+        </div>
+    </div>
+    <div class="absolute top-12 left-6 z-20">
+        <div class="glass-panel px-3 py-1 rounded-full border border-white/20 text-[10px] font-bold text-gray-500">
+            AUTOPILOT: READY
+        </div>
+    </div>
+    <div class="absolute top-12 right-6 z-20">
+        <div
+            class="glass-panel px-3 py-1 rounded-full border border-white/20 text-[10px] font-bold text-gray-500 flex items-center gap-1">
+            <span class="size-1.5 bg-green-500 rounded-full"></span>
+            GNSS SIGNAL
+        </div>
+    </div>
+
+</body>
+
+</html>

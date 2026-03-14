@@ -1,0 +1,28 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: max(844px, 100dvh);
+}
+
+.nautical-lines {
+    background-image:
+        radial-gradient(circle at 100% 100%, transparent 15px, rgba(245, 0, 0, 0.02) 16px, rgba(245, 0, 0, 0.02) 17px, transparent 18px),
+        radial-gradient(circle at 0% 0%, transparent 35px, rgba(245, 0, 0, 0.02) 36px, rgba(245, 0, 0, 0.02) 37px, transparent 38px),
+        linear-gradient(45deg, transparent 48%, rgba(245, 0, 0, 0.01) 49%, rgba(245, 0, 0, 0.01) 51%, transparent 52%);
+    background-size: 60px 60px, 120px 120px, 30px 30px;
+}
+
+.nautical-watermark {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 L100 50 L50 100 L0 50 Z' fill='none' stroke='%23f50000' stroke-opacity='0.03' stroke-width='1'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%23f50000' stroke-opacity='0.03' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+.magazine-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1.5rem;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}

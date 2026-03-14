@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Fuel History - Elegant List V1</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f50000",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#230f0f",
+                    },
+                    fontFamily: {
+                        "display": ["Montserrat", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #e5e5e5;
+            border-radius: 20px;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background-color: #333;
+        }
+    </style>
+    <style>
+        body {
+            min-height: 100dvh;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100 min-h-screen flex justify-center">
+    <div
+        class="w-full max-w-md bg-background-light dark:bg-background-dark min-h-screen relative shadow-2xl overflow-hidden flex flex-col">
+        <header
+            class="px-6 pt-12 pb-6 flex justify-between items-center sticky top-0 z-30 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md">
+            <button class="p-2 -ml-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/5 transition-colors">
+                <span class="material-icons-round text-gray-800 dark:text-white">arrow_back</span>
+            </button>
+            <h1 class="text-xl font-bold tracking-[0.2em] text-gray-900 dark:text-white">MARITIMA</h1>
+            <button class="p-2 -mr-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/5 transition-colors relative">
+                <span class="material-icons-round text-primary">filter_list</span>
+                <span
+                    class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full border-2 border-background-light dark:border-background-dark"></span>
+            </button>
+        </header>
+        <main class="flex-1 px-6 pb-8 overflow-y-auto relative z-10">
+            <div class="mb-8">
+                <h2 class="text-xs font-semibold text-gray-400 dark:text-gray-500 tracking-widest uppercase mb-4 pl-1">
+                    October 2023</h2>
+                <div
+                    class="bg-white dark:bg-[#2a1616] rounded-xl p-5 mb-4 shadow-sm border border-gray-100 dark:border-white/5 relative group hover:shadow-md transition-shadow cursor-pointer">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-lg">M/Y APHRODITE</h3>
+                            <div class="flex items-center text-gray-500 dark:text-gray-400 text-sm mt-1">
+                                <span class="material-icons-round text-sm mr-1 opacity-70">place</span>
+                                Port Hercule, Monaco
+                            </div>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 tracking-wide uppercase">
+                            Completed
+                        </span>
+                    </div>
+                    <div class="flex justify-between items-end border-t border-gray-100 dark:border-white/5 pt-4 mt-2">
+                        <div class="flex space-x-4">
+                            <div>
+                                <p
+                                    class="text-[10px] uppercase text-gray-400 dark:text-gray-500 font-semibold tracking-wider">
+                                    Volume</p>
+                                <p class="font-medium text-gray-800 dark:text-gray-200">12,000L</p>
+                            </div>
+                            <div>
+                                <p
+                                    class="text-[10px] uppercase text-gray-400 dark:text-gray-500 font-semibold tracking-wider">
+                                    Type</p>
+                                <p class="font-medium text-gray-800 dark:text-gray-200">Diesel</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="block text-2xl font-bold text-primary">$14,500</span>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-[#2a1616] rounded-xl p-5 mb-4 shadow-sm border border-gray-100 dark:border-white/5 relative group hover:shadow-md transition-shadow cursor-pointer">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-lg">M/Y ZEUS</h3>
+                            <div class="flex items-center text-gray-500 dark:text-gray-400 text-sm mt-1">
+                                <span class="material-icons-round text-sm mr-1 opacity-70">place</span>
+                                Marina Grande, Capri
+                            </div>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 tracking-wide uppercase">
+                            Completed
+                        </span>
+                    </div>
+                    <div class="flex justify-between items-end border-t border-gray-100 dark:border-white/5 pt-4 mt-2">
+                        <div class="flex space-x-4">
+                            <div>
+                                <p
+                                    class="text-[10px] uppercase text-gray-400 dark:text-gray-500 font-semibold tracking-wider">
+                                    Volume</p>
+                                <p class="font-medium text-gray-800 dark:text-gray-200">5,000L</p>
+                            </div>
+                            <div>
+                                <p
+                                    class="text-[10px] uppercase text-gray-400 dark:text-gray-500 font-semibold tracking-wider">
+                                    Type</p>
+                                <p class="font-medium text-gray-800 dark:text-gray-200">MGO</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="block text-2xl font-bold text-primary">$4,200</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-8">
+                <h2 class="text-xs font-semibold text-gray-400 dark:text-gray-500 tracking-widest uppercase mb-4 pl-1">
+                    September 2023</h2>
+                <div
+                    class="bg-white dark:bg-[#2a1616] rounded-xl p-5 mb-4 shadow-sm border border-gray-100 dark:border-white/5 relative group hover:shadow-md transition-shadow cursor-pointer">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-lg">M/Y APHRODITE</h3>
+                            <div class="flex items-center text-gray-500 dark:text-gray-400 text-sm mt-1">
+                                <span class="material-icons-round text-sm mr-1 opacity-70">place</span>
+                                Ibiza Magna, Spain
+                            </div>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 tracking-wide uppercase">
+                            Completed
+                        </span>
+                    </div>
+                    <div class="flex justify-between items-end border-t border-gray-100 dark:border-white/5 pt-4 mt-2">
+                        <div class="flex space-x-4">
+                            <div>
+                                <p
+                                    class="text-[10px] uppercase text-gray-400 dark:text-gray-500 font-semibold tracking-wider">
+                                    Volume</p>
+                                <p class="font-medium text-gray-800 dark:text-gray-200">8,500L</p>
+                            </div>
+                            <div>
+                                <p
+                                    class="text-[10px] uppercase text-gray-400 dark:text-gray-500 font-semibold tracking-wider">
+                                    Type</p>
+                                <p class="font-medium text-gray-800 dark:text-gray-200">Diesel</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="block text-2xl font-bold text-primary">$9,800</span>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-[#2a1616] rounded-xl p-5 mb-4 shadow-sm border border-gray-100 dark:border-white/5 relative group hover:shadow-md transition-shadow cursor-pointer opacity-90">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-bold text-gray-900 dark:text-white text-lg">M/Y POSEIDON</h3>
+                            <div class="flex items-center text-gray-500 dark:text-gray-400 text-sm mt-1">
+                                <span class="material-icons-round text-sm mr-1 opacity-70">place</span>
+                                Port Vell, Barcelona
+                            </div>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400 tracking-wide uppercase">
+                            Processing
+                        </span>
+                    </div>
+                    <div class="flex justify-between items-end border-t border-gray-100 dark:border-white/5 pt-4 mt-2">
+                        <div class="flex space-x-4">
+                            <div>
+                                <p
+                                    class="text-[10px] uppercase text-gray-400 dark:text-gray-500 font-semibold tracking-wider">
+                                    Volume</p>
+                                <p class="font-medium text-gray-800 dark:text-gray-200">20,000L</p>
+                            </div>
+                            <div>
+                                <p
+                                    class="text-[10px] uppercase text-gray-400 dark:text-gray-500 font-semibold tracking-wider">
+                                    Type</p>
+                                <p class="font-medium text-gray-800 dark:text-gray-200">HVO</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="block text-2xl font-bold text-gray-400 dark:text-gray-500">$22,100</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center py-8">
+                <span class="material-icons-round text-gray-300 dark:text-white/10 animate-spin">refresh</span>
+            </div>
+        </main>
+        <div
+            class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-white via-white to-transparent dark:from-[#230f0f] dark:via-[#230f0f] dark:to-transparent pointer-events-none z-20">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent pointer-events-none z-20">
+        </div>
+    </div>
+
+</body>
+
+</html>

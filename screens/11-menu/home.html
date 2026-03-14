@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Account Settings V1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f50000",
+                        "primary-light": "#ffe6e6",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#230f0f",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1414",
+                    },
+                    fontFamily: {
+                        "display": ["Montserrat", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        body {
+            min-height: 100dvh;
+        }
+
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100 min-h-screen flex justify-center selection:bg-primary/20">
+    <div
+        class="w-full max-w-md bg-background-light dark:bg-background-dark min-h-screen relative shadow-2xl overflow-hidden flex flex-col">
+        <header class="pt-12 pb-8 px-6 flex flex-col items-center relative z-10">
+            <button aria-label="Go back"
+                class="absolute top-12 left-6 w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-200/50 dark:hover:bg-white/10 transition-colors text-gray-600 dark:text-gray-400">
+                <span class="material-icons-outlined">arrow_back</span>
+            </button>
+            <div class="relative mb-4 group cursor-pointer">
+                <div class="w-24 h-24 rounded-full p-1 bg-gradient-to-tr from-primary to-transparent">
+                    <img alt="Profile Picture"
+                        class="w-full h-full rounded-full object-cover border-4 border-background-light dark:border-background-dark shadow-lg"
+                        data-alt="Portrait of a distinguished man"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcWDqdJ9zZ0hAezWJzky7OgweEWZ3xm-lSQpjBKWuxc3ynIj6cpGuGQX1L-wCDu63R_8HwuT5geDlLfRvBKVkFbMdCn7Uhdfvaf7oagG3HyEGe5fwiAq-NlAOnzN40n4VQIvoh9Pc2quoqTqmpdVCy2WzOoB4x-N700PQQTMHYB-L3UKUKPDj9mtMA7PmWJ45W-HxRIcLZpszA9YMyA9zLM2Tm_y7I-H0oz4ObPL0-GTFCsWMQX-ycur1XNBsFZX2UO_Exg60D1JA" />
+                </div>
+                <div
+                    class="absolute bottom-0 right-0 bg-primary text-white p-1.5 rounded-full shadow-md border-2 border-background-light dark:border-background-dark">
+                    <span class="material-icons-outlined text-sm block">camera_alt</span>
+                </div>
+            </div>
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-1">Capt. James Sterling</h1>
+            <p class="text-sm font-medium text-primary uppercase tracking-widest mb-5">Platinum Owner</p>
+            <button
+                class="px-6 py-2.5 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 text-sm font-semibold flex items-center gap-2 group">
+                <span>Edit Profile</span>
+                <span
+                    class="material-icons-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+            </button>
+        </header>
+        <main class="flex-1 px-5 pb-12 overflow-y-auto no-scrollbar space-y-6">
+            <section>
+                <h3 class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-3 px-2">
+                    Maritime Operations</h3>
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+                    <a class="flex items-center p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group border-b border-gray-50 dark:border-gray-800/50"
+                        href="#">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 group-hover:scale-110 transition-transform">
+                            <span class="material-icons-outlined">sailing</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200">My Yachts</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Manage your fleet</p>
+                        </div>
+                        <span class="material-icons-outlined text-gray-300 dark:text-gray-600">chevron_right</span>
+                    </a>
+                    <a class="flex items-center p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group border-b border-gray-50 dark:border-gray-800/50"
+                        href="#">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 group-hover:scale-110 transition-transform">
+                            <span class="material-icons-outlined">local_gas_station</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200">Fuel Bookings</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Upcoming bunkering</p>
+                        </div>
+                        <div class="bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full mr-2">2 NEW
+                        </div>
+                        <span class="material-icons-outlined text-gray-300 dark:text-gray-600">chevron_right</span>
+                    </a>
+                    <a class="flex items-center p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group"
+                        href="#">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 group-hover:scale-110 transition-transform">
+                            <span class="material-icons-outlined">handyman</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200">Maintenance</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Service logs &amp; requests</p>
+                        </div>
+                        <span class="material-icons-outlined text-gray-300 dark:text-gray-600">chevron_right</span>
+                    </a>
+                </div>
+            </section>
+            <section>
+                <h3 class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-3 px-2">
+                    Membership &amp; Billing</h3>
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+                    <a class="flex items-center p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group border-b border-gray-50 dark:border-gray-800/50"
+                        href="#">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 group-hover:scale-110 transition-transform">
+                            <span class="material-icons-outlined">card_membership</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200">Subscription Plan</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Platinum Tier Benefits</p>
+                        </div>
+                        <span class="material-icons-outlined text-gray-300 dark:text-gray-600">chevron_right</span>
+                    </a>
+                    <a class="flex items-center p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group border-b border-gray-50 dark:border-gray-800/50"
+                        href="#">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 group-hover:scale-110 transition-transform">
+                            <span class="material-icons-outlined">receipt_long</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200">Billing History</h4>
+                        </div>
+                        <span class="material-icons-outlined text-gray-300 dark:text-gray-600">chevron_right</span>
+                    </a>
+                    <a class="flex items-center p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group"
+                        href="#">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 group-hover:scale-110 transition-transform">
+                            <span class="material-icons-outlined">credit_card</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200">Payment Methods</h4>
+                        </div>
+                        <span class="material-icons-outlined text-gray-300 dark:text-gray-600">chevron_right</span>
+                    </a>
+                </div>
+            </section>
+            <section>
+                <h3 class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-3 px-2">
+                    Privacy &amp; Security</h3>
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+                    <a class="flex items-center p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group border-b border-gray-50 dark:border-gray-800/50"
+                        href="#">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 group-hover:scale-110 transition-transform">
+                            <span class="material-icons-outlined">lock</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200">Password &amp; Security</h4>
+                        </div>
+                        <span class="material-icons-outlined text-gray-300 dark:text-gray-600">chevron_right</span>
+                    </a>
+                    <a class="flex items-center p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group border-b border-gray-50 dark:border-gray-800/50"
+                        href="#">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 group-hover:scale-110 transition-transform">
+                            <span class="material-icons-outlined">verified_user</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200">Two-Factor Auth</h4>
+                        </div>
+                        <span class="text-xs font-semibold text-green-500 mr-2">ON</span>
+                        <span class="material-icons-outlined text-gray-300 dark:text-gray-600">chevron_right</span>
+                    </a>
+                    <a class="flex items-center p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group"
+                        href="#">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 group-hover:scale-110 transition-transform">
+                            <span class="material-icons-outlined">notifications_none</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200">Notification Preferences</h4>
+                        </div>
+                        <span class="material-icons-outlined text-gray-300 dark:text-gray-600">chevron_right</span>
+                    </a>
+                </div>
+            </section>
+            <section>
+                <h3 class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-3 px-2">App
+                    Preferences</h3>
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+                    <div class="flex items-center justify-between p-4 border-b border-gray-50 dark:border-gray-800/50">
+                        <div class="flex items-center">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
+                                <span class="material-icons-outlined">dark_mode</span>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200">Dark Mode</h4>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input class="sr-only peer" type="checkbox" value="" />
+                            <div
+                                class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                            </div>
+                        </label>
+                    </div>
+                    <a class="flex items-center justify-between p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group"
+                        href="#">
+                        <div class="flex items-center">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
+                                <span class="material-icons-outlined">translate</span>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200">Language</h4>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-sm text-gray-500 dark:text-gray-400">English (US)</span>
+                            <span class="material-icons-outlined text-gray-300 dark:text-gray-600">chevron_right</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            <section>
+                <h3 class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-3 px-2">
+                    Support &amp; Legal</h3>
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+                    <a class="flex items-center p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group border-b border-gray-50 dark:border-gray-800/50"
+                        href="#">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 group-hover:scale-110 transition-transform">
+                            <span class="material-icons-outlined">help_outline</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200">Help Center</h4>
+                        </div>
+                        <span class="material-icons-outlined text-gray-300 dark:text-gray-600">chevron_right</span>
+                    </a>
+                    <a class="flex items-center p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group border-b border-gray-50 dark:border-gray-800/50"
+                        href="#">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 group-hover:scale-110 transition-transform">
+                            <span class="material-icons-outlined">gavel</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200">Terms of Service</h4>
+                        </div>
+                        <span class="material-icons-outlined text-gray-300 dark:text-gray-600">chevron_right</span>
+                    </a>
+                    <a class="flex items-center p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group"
+                        href="#">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 group-hover:scale-110 transition-transform">
+                            <span class="material-icons-outlined">policy</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-800 dark:text-gray-200">Privacy Policy</h4>
+                        </div>
+                        <span class="material-icons-outlined text-gray-300 dark:text-gray-600">chevron_right</span>
+                    </a>
+                </div>
+            </section>
+            <div class="pt-4 flex flex-col items-center">
+                <button
+                    class="text-primary font-bold text-sm tracking-wide py-3 px-8 rounded-lg hover:bg-primary/5 transition-colors mb-2">
+                    Log Out
+                </button>
+                <p class="text-[10px] text-gray-400 dark:text-gray-600">Version 2.4.1 (Build 890)</p>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

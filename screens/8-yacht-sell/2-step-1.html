@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Sell Your Yacht Flow V3</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#f50000", "background-light": "#f8f5f5", "background-dark": "#230f0f" }, fontFamily: { display: "Montserrat" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" } } } };</script>
+  <style>
+    /* Custom toggle switch styling to match primary color */
+    .toggle-checkbox:checked {
+      right: 0;
+      border-color: #f50000;
+    }
+
+    .toggle-checkbox:checked+.toggle-label {
+      background-color: #f50000;
+    }
+
+    /* Hide scrollbar for clean look */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body
+  class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100 min-h-screen flex justify-center selection:bg-primary/20 selection:text-primary">
+  <div class="w-full max-w-md bg-white dark:bg-[#1a0b0b] min-h-screen shadow-2xl relative flex flex-col">
+    <!-- Header & Progress -->
+    <header
+      class="px-6 pt-8 pb-4 bg-white dark:bg-[#1a0b0b] sticky top-0 z-10 border-b border-gray-100 dark:border-red-900/10">
+      <div class="flex items-center justify-between mb-6">
+        <button class="p-2 -ml-2 rounded-full hover:bg-gray-100 dark:hover:bg-red-900/20 transition-colors">
+          <span class="material-icons-outlined text-gray-800 dark:text-gray-200">arrow_back</span>
+        </button>
+        <div class="text-sm font-bold tracking-wider text-gray-400 dark:text-gray-500 uppercase">Step 1 of 4</div>
+        <button class="text-sm font-semibold text-primary hover:text-red-600 transition-colors">Save Draft</button>
+      </div>
+      <h1 class="text-2xl font-extrabold text-gray-900 dark:text-white mb-2 tracking-tight">List Your Yacht</h1>
+      <p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Let's start with the basics.</p>
+      <!-- Progress Bar -->
+      <div class="flex gap-2 mt-6">
+        <div class="h-1.5 flex-1 rounded-full bg-primary shadow-[0_0_10px_rgba(245,0,0,0.4)]"></div>
+        <div class="h-1.5 flex-1 rounded-full bg-gray-200 dark:bg-gray-800"></div>
+        <div class="h-1.5 flex-1 rounded-full bg-gray-200 dark:bg-gray-800"></div>
+        <div class="h-1.5 flex-1 rounded-full bg-gray-200 dark:bg-gray-800"></div>
+      </div>
+    </header>
+    <!-- Main Content -->
+    <main class="flex-1 px-6 py-6 overflow-y-auto no-scrollbar pb-32">
+      <!-- Media Uploader -->
+      <section class="mb-8">
+        <label
+          class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-3 ml-1 uppercase tracking-wide">Media</label>
+        <div
+          class="group relative w-full aspect-[4/3] rounded-xl border-2 border-dashed border-primary/30 dark:border-primary/40 bg-primary/5 dark:bg-primary/10 flex flex-col items-center justify-center cursor-pointer hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300">
+          <div
+            class="w-20 h-20 rounded-full bg-white dark:bg-red-950/50 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 mb-4">
+            <span class="material-icons-outlined text-4xl text-primary">add_a_photo</span>
+          </div>
+          <h3 class="font-bold text-gray-900 dark:text-white text-lg">Upload Photos</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Tap to select form library</p>
+          <!-- Decorative image placeholder (simulating a faint background image) -->
+          <div class="absolute inset-0 opacity-5 pointer-events-none rounded-xl overflow-hidden">
+            <img class="w-full h-full object-cover grayscale" data-alt="Abstract yacht hull texture"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIBA-DDD16UzOR_4vzHggBen9oKYu306-SB5jIp-3mX_zTt2BklKHcHZMsIuK9NwwGSu_ZiI8U7xNX3c-nBUJAi297H3AAOFTbDTctBZ48YUQmRWdzwTB80oBlGwOd1QwcU1xuXzGeZZgDL1ozDAc6llMS7RssnKDygvwdNOjI-et5ahubFlQV1GcWkc-lTC2QQzpBcqmlmGX9ySK5iGFxwFJ1g8qPMjPSvnndornn-pSV18FL2BM6hwS_udGhDuI9kpPxSy0k2-A" />
+          </div>
+        </div>
+      </section>
+      <!-- Form Fields -->
+      <section class="space-y-6">
+        <!-- Manufacturer -->
+        <div>
+          <label
+            class="block text-xs font-bold text-gray-500 dark:text-gray-400 mb-2 ml-1 uppercase tracking-wide">Manufacturer</label>
+          <div class="relative">
+            <select
+              class="w-full pl-5 pr-10 py-4 rounded-full bg-white dark:bg-[#2a1515] border border-gray-200 dark:border-red-900/30 text-gray-900 dark:text-white font-medium focus:ring-2 focus:ring-primary focus:border-primary transition-all shadow-sm appearance-none cursor-pointer outline-none">
+              <option disabled="" selected="" value="">Select Manufacturer</option>
+              <option value="azimut">Azimut</option>
+              <option value="sunseeker">Sunseeker</option>
+              <option value="ferretti">Ferretti Group</option>
+              <option value="princess">Princess Yachts</option>
+            </select>
+            <span class="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-primary">
+              <span class="material-icons-outlined">expand_more</span>
+            </span>
+          </div>
+        </div>
+        <!-- Model & Year Row -->
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label
+              class="block text-xs font-bold text-gray-500 dark:text-gray-400 mb-2 ml-1 uppercase tracking-wide">Model</label>
+            <input
+              class="w-full px-5 py-4 rounded-full bg-white dark:bg-[#2a1515] border border-gray-200 dark:border-red-900/30 text-gray-900 dark:text-white font-medium placeholder-gray-400 focus:ring-2 focus:ring-primary focus:border-primary transition-all shadow-sm outline-none"
+              placeholder="e.g. 78 Fly" type="text" />
+          </div>
+          <div>
+            <label
+              class="block text-xs font-bold text-gray-500 dark:text-gray-400 mb-2 ml-1 uppercase tracking-wide">Year</label>
+            <input
+              class="w-full px-5 py-4 rounded-full bg-white dark:bg-[#2a1515] border border-gray-200 dark:border-red-900/30 text-gray-900 dark:text-white font-medium placeholder-gray-400 focus:ring-2 focus:ring-primary focus:border-primary transition-all shadow-sm outline-none"
+              placeholder="2024" type="number" />
+          </div>
+        </div>
+        <!-- Asking Price -->
+        <div>
+          <label
+            class="block text-xs font-bold text-gray-500 dark:text-gray-400 mb-2 ml-1 uppercase tracking-wide">Asking
+            Price</label>
+          <div class="relative">
+            <span class="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 font-bold">$</span>
+            <input
+              class="w-full pl-10 pr-5 py-4 rounded-full bg-white dark:bg-[#2a1515] border border-gray-200 dark:border-red-900/30 text-gray-900 dark:text-white font-bold text-lg placeholder-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-all shadow-sm outline-none"
+              placeholder="0.00" type="text" />
+            <span
+              class="absolute right-5 top-1/2 -translate-y-1/2 text-xs font-bold text-gray-400 bg-gray-100 dark:bg-red-900/20 px-2 py-1 rounded">USD</span>
+          </div>
+        </div>
+        <!-- Charter Toggle -->
+        <div
+          class="bg-gray-50 dark:bg-[#230f0f] border border-gray-100 dark:border-red-900/20 p-5 rounded-xl flex items-center justify-between mt-4">
+          <div>
+            <h4 class="font-bold text-gray-900 dark:text-white">Show to Charterers</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Allow charter clients to view this listing</p>
+          </div>
+          <div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+            <input
+              class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 dark:border-gray-600 appearance-none cursor-pointer transition-all duration-300 ease-in-out checked:bg-white checked:translate-x-full checked:border-primary outline-none focus:ring-0"
+              id="toggle" name="toggle" type="checkbox" />
+            <label
+              class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 dark:bg-gray-700 cursor-pointer transition-colors duration-300 ease-in-out peer-checked:bg-primary"
+              for="toggle"></label>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Sticky Footer -->
+    <footer
+      class="absolute bottom-0 left-0 w-full p-6 bg-white/80 dark:bg-[#1a0b0b]/90 backdrop-blur-md border-t border-gray-100 dark:border-red-900/10 z-20">
+      <button
+        class="w-full bg-primary hover:bg-red-600 text-white font-bold py-4 px-6 rounded-full shadow-lg shadow-red-500/30 transform transition-all active:scale-[0.98] flex items-center justify-center gap-3 group">
+        <span>Next Step</span>
+        <span class="bg-white/20 rounded-full p-1 group-hover:translate-x-1 transition-transform">
+          <span class="material-icons-outlined text-sm">arrow_forward</span>
+        </span>
+      </button>
+    </footer>
+  </div>
+</body>
+
+</html>

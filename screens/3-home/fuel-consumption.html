@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Average Fuel Consumption</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="../../_src/output.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f50000",
+                        "primary-dark": "#c20000",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#230f0f",
+                    },
+                    fontFamily: {
+                        "display": ["Montserrat", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+        }
+
+        .glass-panel-dark {
+            background: rgba(42, 18, 18, 0.55);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .glass-panel-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-panel-dark.glass-panel-hover:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes float-gentle {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-4px);
+            }
+        }
+
+        @keyframes pulse-subtle {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .animate-float {
+            animation: float-gentle 4s ease-in-out infinite;
+        }
+
+        .animate-pulse-subtle {
+            animation: pulse-subtle 2.5s ease-in-out infinite;
+        }
+
+        .progress-bar-animated {
+            background: linear-gradient(90deg, var(--progress-color, #f50000) 0%, var(--progress-color-end, #c20000) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        .period-btn-active {
+            background: linear-gradient(135deg, #f50000 0%, #c20000 100%);
+            box-shadow: 0 4px 20px rgba(245, 0, 0, 0.35);
+        }
+
+        .gauge-ring {
+            filter: drop-shadow(0 0 20px rgba(245, 0, 0, 0.25));
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display min-h-screen flex justify-center selection:bg-primary/20">
+    <!-- Nautical Background -->
+    <div class="fixed inset-0 nautical-lines nautical-watermark pointer-events-none z-0"></div>
+
+    <!-- Ambient Glow Effects -->
+    <div class="fixed inset-0 pointer-events-none">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-primary/8 rounded-full blur-[120px]">
+        </div>
+        <div class="absolute bottom-20 right-0 w-48 h-48 bg-blue-500/5 rounded-full blur-[80px]"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="w-full max-w-md min-h-screen flex flex-col relative overflow-hidden">
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col px-6 py-6 relative z-10 overflow-y-auto">
+            <!-- Header -->
+            <header class="flex items-center justify-between mb-6">
+                <button
+                    class="p-2.5 -ml-2 hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-all active:scale-95">
+                    <span class="material-icons text-slate-600 dark:text-slate-400">arrow_back</span>
+                </button>
+                <div class="text-center">
+                    <h1 class="text-lg font-bold text-slate-900 dark:text-white">Fuel Consumption</h1>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-0.5">Analytics</p>
+                </div>
+                <button
+                    class="p-2.5 -mr-2 hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-all active:scale-95">
+                    <span class="material-icons text-slate-600 dark:text-slate-400">more_vert</span>
+                </button>
+            </header>
+
+            <!-- Main Gauge Card -->
+            <div class="glass-panel dark:glass-panel-dark rounded-3xl p-6 mb-5 relative overflow-hidden">
+                <!-- Decorative Elements -->
+                <div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
+                <div class="absolute -bottom-8 -left-8 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"></div>
+
+                <div class="relative z-10">
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-11 h-11 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center shadow-lg shadow-primary/25">
+                                <span class="material-icons text-white text-xl">speed</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-slate-900 dark:text-white text-sm">Average Consumption</p>
+                                <p class="text-[11px] text-slate-500 dark:text-slate-400">Last 30 days</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-500/15 border border-green-500/20">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse-subtle"></span>
+                            <span class="text-[10px] font-semibold text-green-600 dark:text-green-400">-2.3%</span>
+                        </div>
+                    </div>
+
+                    <!-- Gauge Display -->
+                    <div class="flex items-end justify-center gap-3 py-5">
+                        <div class="relative">
+                            <svg class="w-40 h-40 gauge-ring" viewBox="0 0 120 120">
+                                <defs>
+                                    <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#f50000" />
+                                        <stop offset="100%" stop-color="#c20000" />
+                                    </linearGradient>
+                                </defs>
+                                <!-- Background Arc -->
+                                <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(0,0,0,0.05)" stroke-width="8"
+                                    class="dark:stroke-white/5" />
+                                <!-- Progress Arc -->
+                                <circle cx="60" cy="60" r="52" fill="none" stroke="url(#gaugeGradient)" stroke-width="8"
+                                    stroke-linecap="round" stroke-dasharray="245" stroke-dashoffset="82"
+                                    transform="rotate(135 60 60)" class="transition-all duration-1000" />
+                            </svg>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center">
+                                <span
+                                    class="text-4xl font-bold text-slate-900 dark:text-white tracking-tight">7.2</span>
+                                <span class="text-xs text-slate-400 -mt-1">L/100km</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats Row -->
+                    <div class="grid grid-cols-3 gap-3 pt-3 border-t border-slate-200/50 dark:border-slate-700/50">
+                        <div class="text-center">
+                            <p class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5">Best</p>
+                            <p class="text-sm font-bold text-green-600 dark:text-green-400">5.8</p>
+                        </div>
+                        <div class="text-center border-x border-slate-200/50 dark:border-slate-700/50">
+                            <p class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5">Worst</p>
+                            <p class="text-sm font-bold text-orange-500">9.4</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5">Avg Speed</p>
+                            <p class="text-sm font-bold text-slate-700 dark:text-slate-300">62<span
+                                    class="text-[10px] font-normal text-slate-400">km/h</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 gap-3 mb-5">
+                <div class="glass-panel dark:glass-panel-dark glass-panel-hover rounded-2xl p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center">
+                            <span class="material-icons text-primary text-lg">route</span>
+                        </div>
+                        <span class="text-[10px] text-green-600 font-medium">+12%</span>
+                    </div>
+                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Distance</p>
+                    <p class="text-xl font-bold text-slate-900 dark:text-white">2,450<span
+                            class="text-xs font-normal text-slate-400 ml-1">km</span></p>
+                </div>
+                <div class="glass-panel dark:glass-panel-dark glass-panel-hover rounded-2xl p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-9 h-9 bg-blue-500/10 rounded-lg flex items-center justify-center">
+                            <span class="material-icons text-blue-500 text-lg">local_gas_station</span>
+                        </div>
+                    </div>
+                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Total Fuel</p>
+                    <p class="text-xl font-bold text-slate-900 dark:text-white">176.4<span
+                            class="text-xs font-normal text-slate-400 ml-1">L</span></p>
+                </div>
+                <div class="glass-panel dark:glass-panel-dark glass-panel-hover rounded-2xl p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-9 h-9 bg-amber-500/10 rounded-lg flex items-center justify-center">
+                            <span class="material-icons text-amber-500 text-lg">payments</span>
+                        </div>
+                    </div>
+                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Total Cost</p>
+                    <p class="text-xl font-bold text-slate-900 dark:text-white">€317.52</p>
+                </div>
+                <div class="glass-panel dark:glass-panel-dark glass-panel-hover rounded-2xl p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-9 h-9 bg-purple-500/10 rounded-lg flex items-center justify-center">
+                            <span class="material-icons text-purple-500 text-lg">euro_symbol</span>
+                        </div>
+                    </div>
+                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Cost/km</p>
+                    <p class="text-xl font-bold text-slate-900 dark:text-white">€0.13</p>
+                </div>
+            </div>
+
+            <!-- Fuel Type Breakdown -->
+            <div class="glass-panel dark:glass-panel-dark rounded-2xl p-5 mb-5">
+                <div class="flex items-center justify-between mb-5">
+                    <h2 class="text-sm font-semibold text-slate-900 dark:text-white">By Fuel Type</h2>
+                    <span class="material-icons text-slate-400 text-lg">expand_more</span>
+                </div>
+                <div class="space-y-5">
+                    <div class="group">
+                        <div class="flex justify-between items-center mb-2">
+                            <div class="flex items-center gap-2.5">
+                                <div
+                                    class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                                    <span class="material-icons text-primary text-sm">local_gas_station</span>
+                                </div>
+                                <div>
+                                    <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Premium
+                                        95</span>
+                                    <p class="text-[10px] text-slate-400">1,820 km</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-sm font-bold text-slate-900 dark:text-white">6.8</span>
+                                <span class="text-[10px] text-slate-400 ml-1">L/100km</span>
+                            </div>
+                        </div>
+                        <div class="h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full progress-bar-animated rounded-full"
+                                style="--progress-color: #f50000; --progress-color-end: #c20000; width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="flex justify-between items-center mb-2">
+                            <div class="flex items-center gap-2.5">
+                                <div
+                                    class="w-8 h-8 bg-blue-500/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                                    <span class="material-icons text-blue-500 text-sm">local_gas_station</span>
+                                </div>
+                                <div>
+                                    <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Diesel</span>
+                                    <p class="text-[10px] text-slate-400">420 km</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-sm font-bold text-slate-900 dark:text-white">8.1</span>
+                                <span class="text-[10px] text-slate-400 ml-1">L/100km</span>
+                            </div>
+                        </div>
+                        <div class="h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full progress-bar-animated rounded-full"
+                                style="--progress-color: #3b82f6; --progress-color-end: #1d4ed8; width: 60%"></div>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="flex justify-between items-center mb-2">
+                            <div class="flex items-center gap-2.5">
+                                <div
+                                    class="w-8 h-8 bg-green-500/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                                    <span class="material-icons text-green-500 text-sm">bolt</span>
+                                </div>
+                                <div>
+                                    <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Electric</span>
+                                    <p class="text-[10px] text-slate-400">210 km</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-sm font-bold text-slate-900 dark:text-white">18.2</span>
+                                <span class="text-[10px] text-slate-400 ml-1">kWh</span>
+                            </div>
+                        </div>
+                        <div class="h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full progress-bar-animated rounded-full"
+                                style="--progress-color: #22c55e; --progress-color-end: #16a34a; width: 45%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Consumption Chart -->
+            <div class="glass-panel dark:glass-panel-dark rounded-2xl p-5 mb-5">
+                <div class="flex items-center justify-between mb-5">
+                    <h2 class="text-sm font-semibold text-slate-900 dark:text-white">Consumption Trend</h2>
+                    <div class="flex gap-1">
+                        <button class="p-1.5 rounded-lg bg-primary/10 text-primary">
+                            <span class="material-icons text-sm">show_chart</span>
+                        </button>
+                        <button class="p-1.5 rounded-lg text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5">
+                            <span class="material-icons text-sm">bar_chart</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="relative h-40">
+                    <canvas id="consumptionChart"></canvas>
+                </div>
+                <div class="flex justify-between mt-3 pt-3 border-t border-slate-200/50 dark:border-slate-700/50">
+                    <div class="text-center">
+                        <p class="text-[10px] text-slate-400 uppercase">Min</p>
+                        <p class="text-sm font-bold text-green-500">5.8</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-[10px] text-slate-400 uppercase">Avg</p>
+                        <p class="text-sm font-bold text-primary">7.2</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-[10px] text-slate-400 uppercase">Max</p>
+                        <p class="text-sm font-bold text-orange-500">9.4</p>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <div class="px-6 py-4 border-t border-slate-200/50 dark:border-slate-700/30">
+            <div class="flex items-center justify-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse-subtle"></span>
+                <p class="text-[11px] text-slate-400">Last synced: Today, 10:30 AM</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('consumptionChart').getContext('2d');
+
+        const gradient = ctx.createLinearGradient(0, 0, 0, 160);
+        gradient.addColorStop(0, 'rgba(245, 0, 0, 0.3)');
+        gradient.addColorStop(1, 'rgba(245, 0, 0, 0)');
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [{
+                    label: 'L/100km',
+                    data: [7.8, 6.9, 7.2, 6.8],
+                    borderColor: '#f50000',
+                    backgroundColor: gradient,
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#f50000',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 4,
+                    pointHoverRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: 'rgba(35, 15, 15, 0.9)',
+                        titleColor: '#fff',
+                        bodyColor: '#fff',
+                        padding: 10,
+                        cornerRadius: 8,
+                        displayColors: false,
+                        callbacks: {
+                            label: function (context) {
+                                return context.parsed.y + ' L/100km';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        ticks: {
+                            color: '#94a3b8',
+                            font: { size: 10, family: 'Montserrat' }
+                        }
+                    },
+                    y: {
+                        grid: {
+                            color: 'rgba(148, 163, 184, 0.1)',
+                            drawBorder: false
+                        },
+                        ticks: {
+                            color: '#94a3b8',
+                            font: { size: 10, family: 'Montserrat' },
+                            callback: function (value) {
+                                return value;
+                            }
+                        },
+                        min: 4,
+                        max: 12
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

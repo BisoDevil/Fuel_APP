@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html class="" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Booking Confirmation V1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <script>tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#f50000", "primary-soft": "#FFF1F2", "background-light": "#f8f5f5", "background-dark": "#230f0f", "card-light": "#FFFFFF", "card-dark": "#1E1E1E", "text-main-light": "#111827", "text-main-dark": "#F9FAFB", "text-sub-light": "#6B7280", "text-sub-dark": "#9CA3AF", "pill-bg-light": "#F9FAFB", "pill-bg-dark": "#2D2D2D" }, fontFamily: { sans: ["\"Plus Jakarta Sans\"", "sans-serif"], display: "Montserrat" }, boxShadow: { soft: "0 10px 40px -10px rgba(0, 0, 0, 0.08)", glow: "0 10px 30px -5px rgba(230, 46, 61, 0.3)" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" } } } };</script>
+    <style>
+        .bg-gradient-luxury {
+            background: linear-gradient(180deg, #EADBC8 0%, #F5EFE6 30%, #FDF6F3 100%);
+        }
+
+        .dark .bg-gradient-luxury {
+            background: linear-gradient(180deg, #1F1F1F 0%, #121212 100%);
+        }
+
+        .texture-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-gradient-luxury min-h-screen flex items-center justify-center font-sans antialiased text-text-main-light dark:text-text-main-dark p-4 relative overflow-hidden transition-colors duration-300">
+    <div class="absolute inset-0 texture-overlay pointer-events-none z-0"></div>
+    <div class="w-full max-w-md relative z-10 flex flex-col h-full justify-between gap-6">
+        <div
+            class="bg-card-light dark:bg-card-dark rounded-[2.5rem] shadow-soft p-6 pb-10 w-full flex flex-col items-center text-center transition-colors duration-300">
+            <div class="mt-8 mb-6 relative">
+                <div
+                    class="w-24 h-24 rounded-full bg-primary/5 dark:bg-primary/10 flex items-center justify-center relative z-10">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white dark:bg-gray-800 shadow-sm flex items-center justify-center">
+                        <span class="material-icons-round text-primary text-4xl">check</span>
+                    </div>
+                </div>
+                <div
+                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full border border-primary/10 dark:border-primary/20 pointer-events-none">
+                </div>
+            </div>
+            <h1 class="text-3xl font-bold mb-3 text-text-main-light dark:text-white tracking-tight">
+                Booking<br />Confirmed</h1>
+            <p class="text-text-sub-light dark:text-text-sub-dark text-sm leading-relaxed max-w-[280px] mb-10">
+                Your refueling slot has been successfully reserved. A confirmation email has been sent.
+            </p>
+            <div class="w-full space-y-4">
+                <div
+                    class="bg-pill-bg-light dark:bg-pill-bg-dark rounded-[1.5rem] p-4 flex items-center gap-4 border border-transparent dark:border-white/5 transition-colors">
+                    <div
+                        class="w-10 h-10 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center flex-shrink-0">
+                        <span class="material-icons-round text-primary text-lg">location_on</span>
+                    </div>
+                    <div class="text-left">
+                        <p
+                            class="text-[10px] uppercase tracking-wider font-bold text-text-sub-light dark:text-text-sub-dark mb-0.5">
+                            Location</p>
+                        <p class="font-bold text-text-main-light dark:text-white text-base">Port Hercules</p>
+                        <p class="text-xs text-text-sub-light dark:text-gray-400">Monaco</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-pill-bg-light dark:bg-pill-bg-dark rounded-[1.5rem] p-4 flex items-center gap-4 border border-transparent dark:border-white/5 transition-colors">
+                    <div
+                        class="w-10 h-10 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center flex-shrink-0">
+                        <span class="material-icons-round text-primary text-lg">calendar_today</span>
+                    </div>
+                    <div class="text-left">
+                        <p
+                            class="text-[10px] uppercase tracking-wider font-bold text-text-sub-light dark:text-text-sub-dark mb-0.5">
+                            Date &amp; Time</p>
+                        <div class="flex items-center gap-2">
+                            <p class="font-bold text-text-main-light dark:text-white text-base">14:15</p>
+                            <span class="text-gray-300 dark:text-gray-600 text-sm">|</span>
+                            <p class="text-text-main-light dark:text-gray-200 text-base">Oct 24</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-[#FDF6F3] dark:bg-zinc-800/50 rounded-[1.5rem] p-5 flex items-center justify-between border border-transparent dark:border-white/5 transition-colors mt-2">
+                    <div class="text-left">
+                        <p
+                            class="text-[10px] uppercase tracking-wider font-bold text-text-sub-light dark:text-text-sub-dark mb-1">
+                            Total Estimate</p>
+                        <p class="text-xs text-text-sub-light dark:text-gray-400">Payment upon arrival</p>
+                    </div>
+                    <p class="font-bold text-xl text-text-main-light dark:text-white tracking-tight">$2,450</p>
+                </div>
+            </div>
+        </div>
+        <div class="w-full flex flex-col items-center gap-4">
+            <button
+                class="w-full bg-primary hover:bg-red-700 text-white font-bold py-4 px-6 rounded-full shadow-glow flex items-center justify-center gap-2 transition-all transform active:scale-95 group">
+                <span class="material-icons-round text-xl group-hover:-translate-y-0.5 transition-transform">home</span>
+                <span class="text-lg">Back to Home</span>
+            </button>
+            <p class="text-[10px] text-gray-400 dark:text-gray-600 uppercase tracking-widest pb-4">Order ID #8839-XA</p>
+        </div>
+    </div>
+</body>
+
+</html>

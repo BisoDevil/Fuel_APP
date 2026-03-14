@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Maintenance History - Elegant List V1</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f50000",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#230f0f",
+                        "neutral-surface": "#ffffff",
+                        "neutral-surface-dark": "#2a1515",
+                    },
+                    fontFamily: {
+                        "display": ["Montserrat", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 15px rgba(245, 0, 0, 0.15)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        body {
+            min-height: 100dvh;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display antialiased text-gray-800 dark:text-gray-100 min-h-screen relative pb-12">
+    <header
+        class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-6 pt-12 pb-6 flex justify-between items-center transition-colors duration-300">
+        <button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-primary/20 transition-colors">
+            <span class="material-icons-round text-2xl text-gray-800 dark:text-white">chevron_left</span>
+        </button>
+        <h1 class="text-lg font-semibold tracking-wide uppercase">Maintenance History</h1>
+        <button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-primary/20 transition-colors">
+            <span class="material-icons-round text-2xl text-gray-800 dark:text-white">tune</span>
+        </button>
+    </header>
+    <main class="px-6 py-2">
+        <div class="mb-8">
+            <h2 class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-4 ml-1">October
+                2023</h2>
+            <div
+                class="bg-white dark:bg-neutral-surface-dark rounded-xl shadow-soft p-5 mb-5 border-l-4 border-primary relative overflow-hidden group active:scale-[0.98] transition-transform duration-200">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="h-10 w-10 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary">
+                            <span class="material-icons-round text-xl">engineering</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base text-gray-900 dark:text-white leading-tight">Main Engine
+                                Overhaul</h3>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">M/Y Serenity</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="block text-primary font-bold text-base">$45,000</span>
+                    </div>
+                </div>
+                <div class="mb-4 bg-gray-50 dark:bg-white/5 p-3 rounded-lg">
+                    <p class="text-[11px] font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">
+                        Notes</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Full block inspection, piston ring replacement,
+                        and cooling system pressure test.</p>
+                </div>
+                <div class="flex justify-between items-end border-t border-gray-100 dark:border-white/5 pt-3 mt-1">
+                    <div class="flex items-center text-xs text-gray-500 dark:text-gray-400">
+                        <span class="material-icons-round text-base mr-1 opacity-70">place</span>
+                        Monaco Marine
+                    </div>
+                    <span
+                        class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
+                        In Progress
+                    </span>
+                </div>
+            </div>
+            <div
+                class="bg-white dark:bg-neutral-surface-dark rounded-xl shadow-soft p-5 mb-5 relative overflow-hidden group active:scale-[0.98] transition-transform duration-200">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="h-10 w-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300">
+                            <span class="material-icons-round text-xl">water_drop</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base text-gray-900 dark:text-white leading-tight">Teak Treatment
+                            </h3>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">M/Y Serenity</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="block text-gray-900 dark:text-gray-200 font-semibold text-base">$4,200</span>
+                    </div>
+                </div>
+                <div class="mb-4 bg-gray-50 dark:bg-white/5 p-3 rounded-lg">
+                    <p class="text-[11px] font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">
+                        Notes</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Annual sanding and protective sealant
+                        application for main deck and swim platform.</p>
+                </div>
+                <div class="flex justify-between items-end border-t border-gray-100 dark:border-white/5 pt-3 mt-1">
+                    <div class="flex items-center text-xs text-gray-500 dark:text-gray-400">
+                        <span class="material-icons-round text-base mr-1 opacity-70">place</span>
+                        Port Hercule
+                    </div>
+                    <span
+                        class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300">
+                        Scheduled
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="mb-8">
+            <h2 class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-4 ml-1">September
+                2023</h2>
+            <div
+                class="bg-white dark:bg-neutral-surface-dark rounded-xl shadow-soft p-5 mb-5 relative overflow-hidden group active:scale-[0.98] transition-transform duration-200">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="h-10 w-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300">
+                            <span class="material-icons-round text-xl">anchor</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base text-gray-900 dark:text-white leading-tight">Hull Cleaning
+                            </h3>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">M/Y Serenity</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="block text-gray-900 dark:text-gray-200 font-semibold text-base">$2,200</span>
+                    </div>
+                </div>
+                <div class="mb-4 bg-gray-50 dark:bg-white/5 p-3 rounded-lg">
+                    <p class="text-[11px] font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">
+                        Notes</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Underwater dive inspection and biological growth
+                        removal. Zinc anodes replaced.</p>
+                </div>
+                <div class="flex justify-between items-end border-t border-gray-100 dark:border-white/5 pt-3 mt-1">
+                    <div class="flex items-center text-xs text-gray-500 dark:text-gray-400">
+                        <span class="material-icons-round text-base mr-1 opacity-70">place</span>
+                        Port Vell
+                    </div>
+                    <span
+                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20">
+                        <span class="h-1.5 w-1.5 rounded-full bg-green-500"></span> Completed
+                    </span>
+                </div>
+            </div>
+            <div
+                class="bg-white dark:bg-neutral-surface-dark rounded-xl shadow-soft p-5 mb-5 relative overflow-hidden group active:scale-[0.98] transition-transform duration-200">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="h-10 w-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300">
+                            <span class="material-icons-round text-xl">directions_boat</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base text-gray-900 dark:text-white leading-tight">Tender Service
+                            </h3>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Tender - 01</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="block text-gray-900 dark:text-gray-200 font-semibold text-base">$1,500</span>
+                    </div>
+                </div>
+                <div class="mb-4 bg-gray-50 dark:bg-white/5 p-3 rounded-lg">
+                    <p class="text-[11px] font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">
+                        Notes</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">Outboard motor oil change and spark plug
+                        replacement. Bilge pump tested.</p>
+                </div>
+                <div class="flex justify-between items-end border-t border-gray-100 dark:border-white/5 pt-3 mt-1">
+                    <div class="flex items-center text-xs text-gray-500 dark:text-gray-400">
+                        <span class="material-icons-round text-base mr-1 opacity-70">place</span>
+                        Port Vell
+                    </div>
+                    <span
+                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20">
+                        <span class="h-1.5 w-1.5 rounded-full bg-green-500"></span> Completed
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-8">
+            <span class="h-1 w-1 rounded-full bg-gray-300 dark:bg-gray-700 inline-block mx-1"></span>
+            <span class="h-1 w-1 rounded-full bg-gray-300 dark:bg-gray-700 inline-block mx-1"></span>
+            <span class="h-1 w-1 rounded-full bg-gray-300 dark:bg-gray-700 inline-block mx-1"></span>
+        </div>
+    </main>
+    <div
+        class="fixed top-0 left-0 w-full h-64 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none -z-10">
+    </div>
+
+</body>
+
+</html>

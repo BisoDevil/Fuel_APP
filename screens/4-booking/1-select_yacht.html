@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Add Yacht - Type Selection V1</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script
+        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#f50000", "primary-50": "#fff0f0", "primary-100": "#ffdede", "primary-200": "#ffc2c2", "primary-300": "#ff9696", "primary-400": "#ff5c5c", "primary-500": "#f50000", "primary-600": "#d60000", "primary-700": "#b30000", "primary-800": "#940000", "primary-900": "#7a0505", "background-light": "#f8f5f5", "background-dark": "#230f0f", "surface-light": "#ffffff", "surface-dark": "#2f1515" }, fontFamily: { display: "Montserrat" }, borderRadius: { DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px" }, boxShadow: { soft: "0 4px 20px -2px rgba(245, 0, 0, 0.05)", glow: "0 0 15px rgba(245, 0, 0, 0.3)" } } } };</script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100 min-h-screen flex justify-center selection:bg-primary selection:text-white">
+    <div
+        class="w-full max-w-md bg-background-light dark:bg-background-dark min-h-screen flex flex-col relative overflow-hidden shadow-2xl">
+        <header class="px-6 pt-12 pb-4 flex justify-between items-center z-10">
+            <button
+                class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100 dark:hover:bg-primary-900/30 transition-colors">
+                <span class="material-icons text-gray-800 dark:text-white">chevron_left</span>
+            </button>
+            <div class="text-sm font-semibold text-primary tracking-wide">Step 1 of 3</div>
+        </header>
+        <main class="flex-1 px-6 pb-24 overflow-y-auto no-scrollbar">
+            <div class="mb-8 mt-2">
+                <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Select Type</h1>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">Choose your vessel type and details.</p>
+            </div>
+            <div class="mb-10">
+                <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Yacht Type</h2>
+                <div class="flex overflow-x-auto gap-4 pb-4 -mx-6 px-6 no-scrollbar snap-x snap-mandatory">
+                    <div
+                        class="relative min-w-[140px] h-[160px] rounded-2xl bg-surface-light dark:bg-surface-dark border-2 border-primary shadow-soft flex flex-col items-center justify-center p-4 snap-center cursor-pointer transition-transform active:scale-95">
+                        <div
+                            class="absolute top-3 right-3 w-6 h-6 bg-primary rounded-full flex items-center justify-center shadow-md">
+                            <span class="material-icons text-white text-sm">check</span>
+                        </div>
+                        <div
+                            class="w-16 h-16 mb-3 rounded-full bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary text-4xl"
+                                style="font-variation-settings: 'FILL' 1;">directions_boat</span>
+                        </div>
+                        <span
+                            class="font-semibold text-gray-900 dark:text-white text-center text-sm leading-tight">Motor
+                            Yacht</span>
+                    </div>
+                    <div
+                        class="relative min-w-[140px] h-[160px] rounded-2xl bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary/50 flex flex-col items-center justify-center p-4 snap-center cursor-pointer transition-transform active:scale-95 group">
+                        <div
+                            class="w-16 h-16 mb-3 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center group-hover:bg-primary-50 dark:group-hover:bg-primary-900/10 transition-colors">
+                            <span
+                                class="material-symbols-outlined text-gray-400 dark:text-gray-500 group-hover:text-primary text-4xl transition-colors"
+                                style="font-variation-settings: 'FILL' 1;">sailing</span>
+                        </div>
+                        <span
+                            class="font-semibold text-gray-500 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-200 text-center text-sm leading-tight">Sailing
+                            Yacht</span>
+                    </div>
+                    <div
+                        class="relative min-w-[140px] h-[160px] rounded-2xl bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary/50 flex flex-col items-center justify-center p-4 snap-center cursor-pointer transition-transform active:scale-95 group">
+                        <div
+                            class="w-16 h-16 mb-3 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center group-hover:bg-primary-50 dark:group-hover:bg-primary-900/10 transition-colors">
+                            <span
+                                class="material-symbols-outlined text-gray-400 dark:text-gray-500 group-hover:text-primary text-4xl transition-colors"
+                                style="font-variation-settings: 'FILL' 1;">houseboat</span>
+                        </div>
+                        <span
+                            class="font-semibold text-gray-500 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-200 text-center text-sm leading-tight">Catamaran</span>
+                    </div>
+                    <div
+                        class="relative min-w-[140px] h-[160px] rounded-2xl bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary/50 flex flex-col items-center justify-center p-4 snap-center cursor-pointer transition-transform active:scale-95 group">
+                        <div
+                            class="w-16 h-16 mb-3 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center group-hover:bg-primary-50 dark:group-hover:bg-primary-900/10 transition-colors">
+                            <span
+                                class="material-symbols-outlined text-gray-400 dark:text-gray-500 group-hover:text-primary text-4xl transition-colors"
+                                style="font-variation-settings: 'FILL' 1;">speed</span>
+                        </div>
+                        <span
+                            class="font-semibold text-gray-500 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-200 text-center text-sm leading-tight">Sport
+                            Boat</span>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Specifications</h2>
+                <div class="group">
+                    <label
+                        class="block text-xs font-medium text-gray-500 dark:text-gray-400 ml-4 mb-2 uppercase tracking-wider"
+                        for="manufacturer">Manufacturer</label>
+                    <div class="relative">
+                        <input
+                            class="w-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white text-base rounded-full py-4 px-6 shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-600"
+                            id="manufacturer" placeholder="e.g. Sunseeker" type="text" />
+                        <span
+                            class="material-icons absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors">business</span>
+                    </div>
+                </div>
+                <div class="group">
+                    <label
+                        class="block text-xs font-medium text-gray-500 dark:text-gray-400 ml-4 mb-2 uppercase tracking-wider"
+                        for="model">Model</label>
+                    <div class="relative">
+                        <input
+                            class="w-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white text-base rounded-full py-4 px-6 shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-600"
+                            id="model" placeholder="e.g. Predator 74" type="text" />
+                        <span
+                            class="material-icons absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors">sell</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div
+            class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark pt-12">
+            <button
+                class="w-full bg-primary hover:bg-primary-600 text-white font-bold py-4 px-6 rounded-full shadow-lg shadow-primary/30 flex items-center justify-between group transition-all duration-300 transform active:scale-[0.98]">
+                <span class="pl-2 text-lg">Next Step</span>
+                <div
+                    class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                    <span
+                        class="material-icons text-white transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </div>
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>

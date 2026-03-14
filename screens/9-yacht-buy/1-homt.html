@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Concierge Yacht Experience - Explore Yachts</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script
+        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#f50000", beige: "#f5f2ed", "muted-gray": "#7a7a7a", "background-light": "#f8f5f5", "background-dark": "#230f0f" }, fontFamily: { display: "Montserrat" }, borderRadius: { DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px" }, boxShadow: { soft: "0 4px 20px -2px rgba(0, 0, 0, 0.05)", premium: "0 10px 30px -5px rgba(128, 0, 32, 0.1)" } } } };</script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+        :root {
+            --primary-accent: #800020;
+            --warm-beige: #f5f2ed;
+        }
+        body {
+            background-color: #fdfcfb;
+            color: #2d2d2d;
+        }
+        .filter-chip.active {
+            background-color: var(--primary-accent);
+            color: white;
+        }
+        .filter-chip {
+            background-color: white;
+            color: #7a7a7a;
+            border: 1px solid #e5e5e5;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100 antialiased selection:bg-primary/20">
+    <div class="max-w-md mx-auto min-h-screen relative">
+        <header
+            class="px-6 pt-10 pb-4 flex items-center bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md sticky top-0 z-30">
+            <button
+                class="mr-4 p-2 -ml-2 rounded-full hover:bg-beige transition-colors flex items-center justify-center">
+                <span class="material-icons-round text-gray-900 dark:text-white text-2xl">arrow_back_ios_new</span>
+            </button>
+            <h1 class="text-xl font-bold text-gray-900 dark:text-white tracking-tight">Explore Yachts</h1>
+        </header>
+        <div class="px-6 mb-6">
+            <div
+                class="relative flex items-center shadow-soft rounded-2xl bg-white dark:bg-[#2a1212] mb-6 border border-gray-100 dark:border-gray-800">
+                <span class="material-icons-outlined text-muted-gray pl-4">search</span>
+                <input
+                    class="w-full py-4 pl-3 pr-14 bg-transparent border-none focus:ring-0 text-gray-700 dark:text-gray-200 placeholder-gray-400"
+                    placeholder="Find your horizon..." type="text" />
+                <button
+                    class="absolute right-2 p-2 bg-primary text-white rounded-xl shadow-premium hover:opacity-90 transition-all active:scale-95">
+                    <span class="material-icons-outlined">tune</span>
+                </button>
+            </div>
+            <div class="flex overflow-x-auto gap-3 pb-2 scrollbar-hide">
+                <button
+                    class="filter-chip active px-6 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap shadow-sm transition-all">All
+                    Vessels</button>
+                <button
+                    class="filter-chip px-6 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap shadow-sm transition-all">Motor</button>
+                <button
+                    class="filter-chip px-6 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap shadow-sm transition-all">Sail</button>
+                <button
+                    class="filter-chip px-6 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap shadow-sm transition-all">Catamaran</button>
+                <button
+                    class="filter-chip px-6 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap shadow-sm transition-all">Explorer</button>
+            </div>
+        </div>
+        <section class="px-6 pb-12 space-y-8">
+            <div
+                class="bg-white dark:bg-[#2a1212] rounded-[2rem] overflow-hidden shadow-premium border border-gray-50 dark:border-gray-800">
+                <div class="relative h-72">
+                    <img alt="Luxury white superyacht on blue ocean" class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-SbQ8uVLrC9zwc2TaU5IqyHf-OkXdYjeAfnoxnKTKa8Iy1cuHAXleFd0n4BpPsEzmyBV0HRagwzBm33krDkQt33TcuQdXcPo0njqkeFhKtRMd26DOsMqSTN53zZG5Rszg65YrP-_qZa6MZe-XTE7v7Adi0S81Pct5AgL-8AnNqJZjeNWLILygvn0X7df-oGE0ck57ANcn0wEsYEpuo6Xac6lTjvrohWy1tdnsHHlxDUm2aAXzY3SvlFzQlEUIkj9Af6cVrV8hodU" />
+                    <div
+                        class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest shadow-lg">
+                        Featured Sale
+                    </div>
+                    <button
+                        class="absolute top-4 right-4 p-2.5 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-primary transition-colors">
+                        <span class="material-icons-round text-lg">favorite_border</span>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">The Majesty 175</h3>
+                            <div class="flex items-center text-muted-gray text-sm mt-1 gap-3">
+                                <span class="flex items-center gap-1"><span
+                                        class="material-icons-outlined text-sm">straighten</span> 54m</span>
+                                <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                <span class="flex items-center gap-1"><span
+                                        class="material-icons-outlined text-sm">calendar_today</span> 2022</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-primary font-bold text-lg leading-none">Price on Request</p>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full mt-6 py-4 bg-primary text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity active:scale-[0.98]">
+                        <span class="material-symbols-outlined text-xl">doorbell</span>
+                        Inquire
+                    </button>
+                </div>
+            </div>
+            <div
+                class="bg-white dark:bg-[#2a1212] rounded-[2rem] overflow-hidden shadow-premium border border-gray-50 dark:border-gray-800">
+                <div class="relative h-72">
+                    <img alt="Modern yacht interior at sunset" class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3xShZ2pfvgM6XwWuLVMYgP7mr9XmHhtr31LGqWkeS6OmIjb32BhTiGlGWFX5U2S7GYHk3LX-lu_JvUrP5dz_L4sFkGvvgcFNGGR3ciPCgnb7gz017aY7BVHiSIwePCgJYQHKImhm43QoGDN4VyreLBv-RHC37aAqKXoDsIl0Qi0T2xSR1pSQUiLV5UJPL2ZcbqwtK2ktWoMHv3phAZ9_lzgkuk6gXZkF7cHDkZIW4ezJzgCSQ5SeHcfA8ei6gakHoHql8ZGHJ2jY" />
+                    <div
+                        class="absolute top-4 left-4 bg-beige text-primary text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest shadow-lg">
+                        Charter
+                    </div>
+                    <button
+                        class="absolute top-4 right-4 p-2.5 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-primary transition-colors">
+                        <span class="material-icons-round text-lg">favorite_border</span>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Azimut Grande</h3>
+                            <div class="flex items-center text-muted-gray text-sm mt-1 gap-3">
+                                <span class="flex items-center gap-1"><span
+                                        class="material-icons-outlined text-sm">straighten</span> 35m</span>
+                                <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                <span class="flex items-center gap-1"><span
+                                        class="material-icons-outlined text-sm">calendar_today</span> 2023</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-primary font-bold text-lg leading-none">€120,000 / week</p>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full mt-6 py-4 bg-primary text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity active:scale-[0.98]">
+                        <span class="material-symbols-outlined text-xl">doorbell</span>
+                        Inquire
+                    </button>
+                </div>
+            </div>
+            <div
+                class="bg-white dark:bg-[#2a1212] rounded-[2rem] overflow-hidden shadow-premium border border-gray-50 dark:border-gray-800">
+                <div class="relative h-72">
+                    <img alt="Benetti yacht rear deck view" class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIAAGnjZ9itvCw-yodxkk9IoEYM8f8U82J1lDVXfTA9kPiEq375Bq9uq9KzPHv6jFep8zcHb0HPr6Bzt9FtchhxuLkC3xl3vY5HEFDAuV9lGlHC0gb8HUUAJwC5wVjheozv6_Ec8dk6-E_zi5UW-YI_kPzc-aIGB2aJT88teMp3oaiCELiql6wyqy0ev5V3wPU_0GIviM667IEJtPU7fc_jyC_wahjHjVZE9JUe4wfejKM3YXtOvfnVILFPJg-rW4Lk0-4EDFFiMw" />
+                    <div
+                        class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest shadow-lg">
+                        New Arrival
+                    </div>
+                    <button
+                        class="absolute top-4 right-4 p-2.5 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-primary transition-colors">
+                        <span class="material-icons-round text-lg">favorite_border</span>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Benetti Oasis</h3>
+                            <div class="flex items-center text-muted-gray text-sm mt-1 gap-3">
+                                <span class="flex items-center gap-1"><span
+                                        class="material-icons-outlined text-sm">straighten</span> 40m</span>
+                                <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                <span class="flex items-center gap-1"><span
+                                        class="material-icons-outlined text-sm">calendar_today</span> 2020</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-primary font-bold text-lg leading-none">$18,200,000</p>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full mt-6 py-4 bg-primary text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity active:scale-[0.98]">
+                        <span class="material-symbols-outlined text-xl">doorbell</span>
+                        Inquire
+                    </button>
+                </div>
+            </div>
+            <div
+                class="bg-white dark:bg-[#2a1212] rounded-[2rem] overflow-hidden shadow-premium border border-gray-50 dark:border-gray-800">
+                <div class="relative h-72">
+                    <img alt="Sunseeker yacht side profile" class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMrDsAu3XQ6nz32zAIYnX4OyHe1YGdbWP_rw9MGlsFTo0S5cZPODwfbfbDbtZq3uOcVh021UT9Vhjj7rhWgIVWZjI0O6ODJDhWSkZio4RCOf0K9jM9LVkRt1wgmZ1g1H3NxLLfnrM_W6dt6auPjyUoblRyzQsbqP-Wv1J_PK5ja6FYzFR6k9-uGBhZaOVHNSw8aPnSDJDNh0DUaeGYCeDOG49R0YP1YDvQg3aSDnj8jTx0siuC_XBdVfm_kMheqQZgz7ogPBqU104" />
+                    <button
+                        class="absolute top-4 right-4 p-2.5 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-primary transition-colors">
+                        <span class="material-icons-round text-lg">favorite_border</span>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Sunseeker 90 Ocean</h3>
+                            <div class="flex items-center text-muted-gray text-sm mt-1 gap-3">
+                                <span class="flex items-center gap-1"><span
+                                        class="material-icons-outlined text-sm">straighten</span> 27m</span>
+                                <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                <span class="flex items-center gap-1"><span
+                                        class="material-icons-outlined text-sm">calendar_today</span> 2021</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-primary font-bold text-lg leading-none">€6,500,000</p>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full mt-6 py-4 bg-primary text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity active:scale-[0.98]">
+                        <span class="material-symbols-outlined text-xl">doorbell</span>
+                        Inquire
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

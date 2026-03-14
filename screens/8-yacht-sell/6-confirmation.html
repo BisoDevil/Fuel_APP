@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sell Yacht - Confirmation Screen</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script
+        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#f50000", "background-light": "#f8f5f5", "background-dark": "#230f0f" }, fontFamily: { display: "Montserrat" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" } } } };</script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .confetti-bg {
+            background-image:
+                radial-gradient(#f50000 2px, transparent 2.5px),
+                radial-gradient(#f50000 2px, transparent 2.5px),
+                radial-gradient(#ff6b6b 1.5px, transparent 2px),
+                radial-gradient(#cc0000 1.5px, transparent 2px);
+            background-size: 50px 50px, 40px 40px, 30px 30px, 60px 60px;
+            background-position: 0 0, 20px 20px, 10px 30px, 40px 10px;
+            opacity: 0.1;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100 min-h-screen flex justify-center selection:bg-primary/20 selection:text-primary">
+    <div
+        class="w-full max-w-md bg-white dark:bg-[#1a0b0b] min-h-screen shadow-2xl relative flex flex-col overflow-hidden">
+        <div class="absolute inset-0 confetti-bg pointer-events-none z-0"></div>
+        <header class="px-6 pt-8 pb-4 sticky top-0 z-10 flex justify-end">
+            <button
+                class="p-2 -mr-2 rounded-full hover:bg-gray-100 dark:hover:bg-red-900/20 transition-colors text-gray-400 dark:text-gray-500">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </header>
+        <main class="flex-1 px-6 flex flex-col items-center justify-center relative z-10 pb-24">
+            <div class="mb-8 relative">
+                <div
+                    class="w-24 h-24 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-red-500/40 animate-bounce-slow">
+                    <span class="material-symbols-outlined text-white text-5xl font-bold">check</span>
+                </div>
+                <div class="absolute inset-0 rounded-full border border-primary/30 scale-125 animate-pulse"></div>
+                <div class="absolute inset-0 rounded-full border border-primary/10 scale-150"></div>
+            </div>
+            <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-3 text-center tracking-tight">Listing
+                Published!</h1>
+            <p
+                class="text-gray-500 dark:text-gray-400 text-center text-sm font-medium mb-10 max-w-[280px] leading-relaxed">
+                Your yacht <span class="text-gray-900 dark:text-gray-200 font-bold">Azimut 78 Fly</span> is now live on
+                the marketplace. Good luck!
+            </p>
+            <div
+                class="w-full bg-white dark:bg-[#230f0f] rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-black/40 overflow-hidden border border-gray-100 dark:border-red-900/20 transform hover:scale-[1.02] transition-transform duration-300">
+                <div class="relative h-48">
+                    <img alt="Azimut 78 Fly Preview" class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIBA-DDD16UzOR_4vzHggBen9oKYu306-SB5jIp-3mX_zTt2BklKHcHZMsIuK9NwwGSu_ZiI8U7xNX3c-nBUJAi297H3AAOFTbDTctBZ48YUQmRWdzwTB80oBlGwOd1QwcU1xuXzGeZZgDL1ozDAc6llMS7RssnKDygvwdNOjI-et5ahubFlQV1GcWkc-lTC2QQzpBcqmlmGX9ySK5iGFxwFJ1g8qPMjPSvnndornn-pSV18FL2BM6hwS_udGhDuI9kpPxSy0k2-A" />
+                    <div
+                        class="absolute top-3 left-3 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded shadow-sm uppercase tracking-wide">
+                        Live
+                    </div>
+                    <div
+                        class="absolute bottom-3 right-3 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-3 py-1.5 rounded text-gray-900 dark:text-white font-bold text-sm shadow-sm">
+                        $2,450,000
+                    </div>
+                </div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="font-bold text-lg text-gray-900 dark:text-white">Azimut 78 Fly</h3>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Miami, FL • 2021</p>
+                        </div>
+                        <div
+                            class="w-8 h-8 rounded-full bg-gray-50 dark:bg-white/5 flex items-center justify-center text-gray-400">
+                            <span class="material-symbols-outlined text-lg">favorite</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 mt-4 pt-4 border-t border-gray-100 dark:border-white/5">
+                        <div class="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400">
+                            <span class="material-symbols-outlined text-base">straighten</span>
+                            <span>78 ft</span>
+                        </div>
+                        <div class="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400">
+                            <span class="material-symbols-outlined text-base">speed</span>
+                            <span>30 kn</span>
+                        </div>
+                        <div class="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400">
+                            <span class="material-symbols-outlined text-base">bed</span>
+                            <span>4 Cabins</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="p-6 bg-white dark:bg-[#1a0b0b] z-20 space-y-3 pb-8">
+            <button
+                class="w-full bg-primary hover:bg-red-600 text-white font-bold py-4 px-6 rounded-full shadow-lg shadow-red-500/30 transform transition-all active:scale-[0.98] flex items-center justify-center gap-2 group">
+                <span>View Listing</span>
+                <span
+                    class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+            </button>
+            <button
+                class="w-full bg-transparent border-2 border-primary/20 dark:border-primary/30 text-primary hover:bg-primary/5 font-bold py-4 px-6 rounded-full transform transition-all active:scale-[0.98] flex items-center justify-center">
+                Go to Dashboard
+            </button>
+        </footer>
+    </div>
+</body>
+
+</html>

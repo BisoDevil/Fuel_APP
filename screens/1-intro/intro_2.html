@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Onboarding - Seamless Logistics</title>
+    <link href="../../_src/output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f50000",
+                        "primary-dark": "#c20000",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#230f0f",
+                    },
+                    fontFamily: {
+                        "display": ["Montserrat", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark nautical-lines flex items-center justify-center min-h-screen h-[810px]">
+    <div
+        class="relative w-full max-w-md h-full bg-white dark:bg-[#1a0b0b] overflow-hidden flex flex-col nautical-lines">
+
+        <div class="flex justify-end px-8 pt-2 z-30">
+            <button
+                class="text-gray-400 dark:text-gray-500 text-sm font-medium hover:text-primary transition-colors font-display">Skip</button>
+        </div>
+        <div class="flex-1 flex flex-col px-8 ">
+            <div class="mb-12">
+                <h1
+                    class="text-4xl font-extrabold text-gray-900 dark:text-white font-display leading-tight tracking-tight">
+                    Elite <br />
+                    <span class="text-primary">Marketplace</span>
+                </h1>
+                <div class="w-12 h-1 bg-primary mt-4 rounded-full"></div>
+            </div>
+            <div class="flex-1 flex relative">
+                <div class="w-1/2 pr-4 z-10">
+                    <p class="text-gray-600 dark:text-gray-400 font-display text-base leading-relaxed">
+                        Access a curated collection of yachts for rent, sale, and high-end accessories tailored for your
+                        lifestyle.
+                    </p>
+                    <div
+                        class="mt-16 flex items-center text-primary font-semibold text-xs tracking-widest uppercase font-display">
+                        <span>Swipe to explore</span>
+                        <span class="material-symbols-outlined ml-2 text-base">east</span>
+                    </div>
+                </div>
+                <div class="w-1/2 relative h-full">
+                    <div
+                        class="absolute right-0 top-0 w-36 h-36 rounded-2xl overflow-hidden shadow-lg transform -rotate-6 z-10 border border-gray-100 dark:border-gray-800">
+                        <img alt="Yacht Model" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZou3oYInARt45l_29gjpJHi8g8qqTYwTs8TFqLN6gwKJjm72iA5vCB9LEuaEtXZh1QYiLdVEfC7iRQ9UdQl94ih0MK9Mm2zdSW0QdN05-rRw7RvP3PIXNQO_rP5Exqqdk19YaxETNEcdx-OUUKsaC7p70RRxduIR3tQP1MCX-2GtgtZmreGgR3zTZvN0cQFtXbTJxpKjsbBsbXoJet9MqJiAEG5lKPEOW2961N1oiuql81ENAdrcHkYG2uqXQjvbjCWP6uPIH7lE" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div
+                        class="absolute -left-6 top-20 w-40 h-40 rounded-full overflow-hidden shadow-2xl transform rotate-12 z-20 border-4 border-white dark:border-[#230f0f]">
+                        <img alt="Leather Steering Wheel" class="w-full h-full object-cover scale-110"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcKw4Uz4BN5zLpbUjo-RZQtr0_2TfJhgFABaQCnUDFa7aKqDEDGX8DZdfEE74haQQG05Bw2iw5bDp2RNmqsatTA1SaqsUF3jrYZEyKFTp95tZXcO8XAF4HbhhBMlmcH_L87vQcMD0pDu_39YyoOwrQ6Bn94cN0DGUJbD5y9DEuSd1XEx9dpkAA6hgeyQUcS_3ASfZY1QRL752Ob5cVNjkeROIDfv_9eckUFaZKT8jp9TYCHW9QMkmR8GFT8SQbIqBTXUDcUkIxQ-M" />
+                    </div>
+                    <div
+                        class="absolute right-2 top-52 w-32 h-32 rounded-3xl overflow-hidden shadow-xl transform -rotate-3 z-10 border border-gray-100 dark:border-gray-800">
+                        <img alt="Luxury Watch" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHRK3a8Ibu2W8MJtdDdrL7iyYOUWswThA0cEx4ygbw5YmMk84UiGwt6s_TNrLvG3WHelNuV_ftKHh9fcFtbIclP9hvrninvCNTmUwD7YxeT3v6B0qqsXcuhw1e_7S2rcJMOOaCfhS-74qhvZLZI25leRoiOdNlEGE3MIx3_djdvhYV_AHYeh0ibYYNoMiuSKXbU2I6dpb7K5YXENQHRteXDmavNG7OFp6XbGliItQdX6Zw-65elkmsF6pzb0LEiyPUAHcId5GTccs" />
+                        <div class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                    </div>
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-primary/5 rounded-full blur-3xl -z-10">
+                    </div>
+                </div>
+            </div>
+            <div class="pb-8 pt-4 flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-1.5 h-1.5 rounded-full bg-gray-200 dark:bg-gray-800"></div>
+                    <div class="w-6 h-1.5 rounded-full bg-primary"></div>
+                    <div class="w-1.5 h-1.5 rounded-full bg-gray-200 dark:bg-gray-800"></div>
+                </div>
+                <div class="relative">
+                    <a href="intro_3.html"
+                        class="w-20 h-20 bg-white dark:bg-[#1a0b0b] rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.1)] border border-gray-100 dark:border-white/5 active:scale-90 transition-transform group">
+                        <div
+                            class="w-14 h-14 bg-primary rounded-full flex items-center justify-center shadow-lg shadow-red-500/40">
+                            <span class="material-symbols-outlined text-white text-3xl font-bold">arrow_forward</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
