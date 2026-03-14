@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Maritima Inbox Confirmation</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script
+        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#f50000", "background-light": "#f8f5f5", "background-dark": "#230f0f" }, fontFamily: { display: "Montserrat" }, borderRadius: { DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px" } } } };</script>
+    <style>
+        .nautical-watermark {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 L100 50 L50 100 L0 50 Z' fill='none' stroke='%23f50000' stroke-opacity='0.03' stroke-width='1'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%23f50000' stroke-opacity='0.03' stroke-width='1'/%3E%3C/svg%3E");
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col items-center justify-center relative overflow-hidden text-slate-800 dark:text-white">
+    <div class="absolute inset-0 nautical-watermark pointer-events-none z-0"></div>
+    <div class="w-full max-w-md px-8 py-10 relative z-10 flex flex-col h-full justify-center text-center">
+        <div class="flex flex-col items-center mb-8">
+            <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <span class="material-icons text-primary text-5xl">sailing</span>
+            </div>
+            <h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">MARITIMA</h1>
+            <p class="text-sm text-slate-500 mt-1 tracking-widest uppercase text-[0.65rem]">Premium Yacht Management</p>
+        </div>
+        <div class="flex flex-col items-center space-y-8">
+            <div class="relative w-32 h-32 flex items-center justify-center">
+                <div class="absolute inset-0 bg-primary/5 rounded-full blur-xl transform scale-125"></div>
+                <div class="absolute inset-0 bg-primary/10 rounded-full animate-pulse"></div>
+                <div
+                    class="relative bg-white dark:bg-slate-800 w-24 h-24 rounded-full shadow-xl shadow-primary/10 flex items-center justify-center border border-slate-100 dark:border-slate-700">
+                    <span class="material-icons text-primary text-5xl">mark_email_unread</span>
+                    <span
+                        class="absolute top-5 right-6 w-3.5 h-3.5 bg-red-500 border-2 border-white dark:border-slate-800 rounded-full"></span>
+                </div>
+            </div>
+            <div class="space-y-3 max-w-xs mx-auto">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white">CHECK YOUR INBOX</h2>
+                <p class="text-slate-500 text-sm leading-relaxed">
+                    We've sent a password reset link to your email address.
+                </p>
+            </div>
+            <div class="w-full space-y-6 pt-4">
+                <button
+                    class="w-full bg-primary hover:bg-red-700 text-white font-bold py-4 px-4 rounded-lg shadow-lg shadow-primary/30 transition-all duration-300 transform active:scale-[0.98] flex items-center justify-center space-x-2 group">
+                    <span>OPEN EMAIL APP</span>
+                    <span
+                        class="material-icons text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </button>
+                <button
+                    class="text-primary font-semibold text-sm hover:text-red-700 transition-colors flex items-center justify-center gap-2 group">
+                    <span
+                        class="material-symbols-outlined text-lg group-hover:rotate-180 transition-transform duration-500">refresh</span>
+                    Resend Email
+                </button>
+            </div>
+        </div>
+        <div class="mt-auto pt-16 text-center">
+            <a class="inline-flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors text-sm font-medium"
+                href="#">
+                <span class="material-icons text-sm mr-1">arrow_back</span>
+                Back to Login
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
