@@ -8,10 +8,10 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"
         rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1"
         rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL@20..48,100..700,0..1" rel="stylesheet" />
     <script>
         tailwind.config = {
             darkMode: "class",
@@ -59,6 +59,12 @@
         }
     </style>
     <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-rounded {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
         body {
             min-height: max(884px, 100dvh);
         }
@@ -76,7 +82,7 @@
             </div>
             <button
                 class="w-10 h-10 rounded-full bg-white dark:bg-neutral-800 shadow-soft flex items-center justify-center text-neutral-dark dark:text-white border border-neutral-light/30 dark:border-neutral-700">
-                <span class="material-icons text-xl">notifications_none</span>
+                <span class="material-symbols-outlined text-xl">notifications_none</span>
             </button>
         </div>
     </header>
@@ -85,13 +91,13 @@
             <div class="absolute top-4 right-4 z-10">
                 <button
                     class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/40 transition-colors text-white">
-                    <span class="material-icons text-xl">favorite_border</span>
+                    <span class="material-symbols-outlined text-xl">favorite_border</span>
                 </button>
             </div>
             <div class="absolute top-4 left-4 z-10">
                 <span
                     class="px-3 py-1.5 rounded-full bg-primary/90 backdrop-blur-sm text-white text-xs font-bold tracking-wide shadow-sm flex items-center gap-1">
-                    <span class="material-icons text-[10px]">near_me</span>
+                    <span class="material-symbols-outlined text-[10px]">near_me</span>
                     12nm
                 </span>
             </div>
@@ -108,7 +114,7 @@
                             <h2 class="text-3xl font-bold">Capri, Italy</h2>
                         </div>
                         <div class="flex items-center gap-1 bg-white/20 backdrop-blur-md px-2 py-1 rounded-lg">
-                            <span class="material-icons text-yellow-400 text-sm">star</span>
+                            <span class="material-symbols-outlined text-yellow-400 text-sm">star</span>
                             <span class="text-sm font-bold">4.9</span>
                         </div>
                     </div>
@@ -124,7 +130,7 @@
                 <div class="absolute top-3 right-3 z-10">
                     <button
                         class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/40 transition-colors">
-                        <span class="material-icons text-primary text-lg">favorite</span>
+                        <span class="material-symbols-outlined text-primary text-lg">favorite</span>
                     </button>
                 </div>
                 <div class="aspect-square w-full rounded-2xl overflow-hidden relative shadow-lg shadow-neutral-dark/5">
@@ -136,7 +142,7 @@
                         <p class="text-[10px] font-medium text-white/80 uppercase tracking-widest mb-0.5">Aegean Sea</p>
                         <h3 class="text-base font-bold leading-tight">Santorini, Greece</h3>
                         <div class="flex items-center gap-1 mt-1">
-                            <span class="material-icons text-yellow-400 text-xs">star</span>
+                            <span class="material-symbols-outlined text-yellow-400 text-xs">star</span>
                             <span class="text-xs font-bold">4.8</span>
                             <span class="text-[10px] text-white/60 ml-1">• 45nm</span>
                         </div>
@@ -147,7 +153,7 @@
                 <div class="absolute top-3 right-3 z-10">
                     <button
                         class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/40 transition-colors">
-                        <span class="material-icons text-white text-lg">favorite_border</span>
+                        <span class="material-symbols-outlined text-white text-lg">favorite_border</span>
                     </button>
                 </div>
                 <div class="aspect-square w-full rounded-2xl overflow-hidden relative shadow-lg shadow-neutral-dark/5">
@@ -160,7 +166,7 @@
                         </p>
                         <h3 class="text-base font-bold leading-tight">Cinque Terre, Italy</h3>
                         <div class="flex items-center gap-1 mt-1">
-                            <span class="material-icons text-yellow-400 text-xs">star</span>
+                            <span class="material-symbols-outlined text-yellow-400 text-xs">star</span>
                             <span class="text-xs font-bold">4.7</span>
                             <span class="text-[10px] text-white/60 ml-1">• 82nm</span>
                         </div>
@@ -172,7 +178,7 @@
             <button
                 class="text-sm font-semibold text-primary hover:text-red-700 transition-colors flex items-center gap-2 px-6 py-3 rounded-xl bg-primary/5">
                 Explore All Destinations
-                <span class="material-icons text-sm">arrow_forward</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
             </button>
         </div>
     </main>

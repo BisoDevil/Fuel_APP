@@ -11,7 +11,7 @@
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1"
         rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
@@ -67,14 +67,15 @@
 <body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 min-h-screen">
     <header
         class="fixed top-0 w-full z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-white/5 transition-colors duration-300">
-        <div class="px-5 py-4 flex items-center justify-between">
-            <button class="p-2 -ml-2 text-gray-800 dark:text-white hover:bg-primary/5 rounded-full transition-colors">
-                <span class="material-icons-round text-2xl">arrow_back</span>
-            </button>
+        <div class="px-5 pt-12 pb-4 flex items-center justify-between">
+            <a href="../3-home/home.html"
+                class="w-10 h-10 rounded-full bg-white dark:bg-surface-dark shadow-md flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <span class="material-symbols-rounded text-gray-800 dark:text-white">arrow_back_ios_new</span>
+            </a>
             <h1 class="text-xl font-display font-bold tracking-widest uppercase text-primary">Boutique</h1>
             <button
-                class="p-2 -mr-2 relative text-gray-800 dark:text-white hover:bg-primary/5 rounded-full transition-colors">
-                <span class="material-icons-round text-2xl">shopping_bag</span>
+                class="w-10 h-10 rounded-full bg-white dark:bg-surface-dark shadow-md flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors relative">
+                <span class="material-symbols-rounded text-gray-800 dark:text-white">shopping_bag</span>
                 <span
                     class="absolute top-2 right-1 w-2.5 h-2.5 bg-primary rounded-full border-2 border-background-light dark:border-background-dark"></span>
             </button>

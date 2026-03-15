@@ -10,9 +10,10 @@
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap"
         rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
         rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
@@ -97,17 +98,17 @@
     <div class="relative h-screen w-full flex flex-col">
         <header
             class="absolute top-0 left-0 right-0 z-20 px-6 pt-12 pb-4 flex justify-between items-center pointer-events-none">
-            <button
-                class="pointer-events-auto w-10 h-10 rounded-full bg-white/90 dark:bg-background-dark/80 shadow-soft flex items-center justify-center text-gray-800 dark:text-white backdrop-blur-md">
-                <span class="material-icons-round">arrow_back</span>
-            </button>
+            <a href="2-detail.html"
+                class="pointer-events-auto w-10 h-10 rounded-full bg-white/90 dark:bg-surface-dark shadow-md flex items-center justify-center text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <span class="material-symbols-rounded text-gray-800 dark:text-white">arrow_back_ios_new</span>
+            </a>
             <div class="glass-panel pointer-events-auto px-4 py-2 rounded-full shadow-soft flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                 <span class="text-sm font-semibold text-gray-900 dark:text-white">Route to St. Barts</span>
             </div>
             <button
-                class="pointer-events-auto w-10 h-10 rounded-full bg-white/90 dark:bg-background-dark/80 shadow-soft flex items-center justify-center text-gray-800 dark:text-white backdrop-blur-md">
-                <span class="material-icons-round">more_vert</span>
+                class="pointer-events-auto w-10 h-10 rounded-full bg-white/90 dark:bg-surface-dark shadow-md flex items-center justify-center text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <span class="material-symbols-rounded text-gray-800 dark:text-white">more_vert</span>
             </button>
         </header>
         <div class="absolute inset-0 z-0 map-container">
@@ -194,12 +195,12 @@
                             Light chop expected near Anguilla channel.
                         </p>
                     </div>
-                    <button
-                        class="w-full bg-primary hover:bg-red-700 active:bg-red-800 text-white font-bold py-4 px-6 rounded-lg shadow-glow transition-all duration-200 flex items-center justify-center gap-2 group">
-                        <span>Confirm Voyage</span>
-                        <span
-                            class="material-icons-round group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                    </button>
+<a href="../../3-home/home.html"
+                    class="w-full bg-primary hover:bg-red-700 active:bg-red-800 text-white font-bold py-4 px-6 rounded-lg shadow-glow transition-all duration-200 flex items-center justify-center gap-2 group">
+                    <span>Confirm Voyage</span>
+                    <span
+                        class="material-icons-round group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
                 </div>
             </div>
         </div>

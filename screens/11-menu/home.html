@@ -5,12 +5,11 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Account Settings V1</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"
-        rel="stylesheet" />
+    <link href="../../_src/unified-styles.css" rel="stylesheet">
+    <link href="../../_src/output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
         tailwind.config = {
@@ -18,55 +17,40 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#f50000",
-                        "primary-light": "#ffe6e6",
+                        primary: "#f50000",
+                        "primary-dark": "#c20000",
+                        "primary-50": "#fff0f0",
                         "background-light": "#f8f5f5",
-                        "background-dark": "#230f0f",
+                        "background-dark": "#120808",
                         "surface-light": "#ffffff",
-                        "surface-dark": "#2d1414",
+                        "surface-dark": "#1E1E1E",
+                        "card-dark": "#2C2C2C"
                     },
                     fontFamily: {
-                        "display": ["Montserrat", "sans-serif"]
+                        display: ["Montserrat", "sans-serif"],
+                        sans: ["Plus Jakarta Sans", "sans-serif"]
                     },
-                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px" },
-                },
-            },
+                    borderRadius: { DEFAULT: "0.5rem", lg: "0.75rem", xl: "1rem", "2xl": "1.5rem" },
+                    boxShadow: { soft: "0 4px 20px -2px rgba(0, 0, 0, 0.05)", glow: "0 4px 20px -2px rgba(245, 0, 0, 0.3)" }
+                }
+            }
         }
     </script>
     <style>
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        body {
-            min-height: 100dvh;
-        }
-
-        body {
-            min-height: max(884px, 100dvh);
-        }
-    </style>
-    <style>
-        body {
-            min-height: max(884px, 100dvh);
-        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        body { min-height: max(884px, 100dvh); }
     </style>
 </head>
 
-<body
-    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100 min-h-screen flex justify-center selection:bg-primary/20">
+<body class="bg-background-light dark:bg-background-dark font-sans text-gray-800 dark:text-gray-100 min-h-screen flex justify-center selection:bg-primary/20">
     <div
         class="w-full max-w-md bg-background-light dark:bg-background-dark min-h-screen relative shadow-2xl overflow-hidden flex flex-col">
         <header class="pt-12 pb-8 px-6 flex flex-col items-center relative z-10">
-            <button aria-label="Go back"
-                class="absolute top-12 left-6 w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-200/50 dark:hover:bg-white/10 transition-colors text-gray-600 dark:text-gray-400">
-                <span class="material-icons-outlined">arrow_back</span>
-            </button>
+            <a href="../3-home/home.html" aria-label="Go back"
+                class="absolute top-12 left-6 w-10 h-10 rounded-full bg-white dark:bg-surface-dark shadow-md flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <span class="material-symbols-rounded text-gray-800 dark:text-white">arrow_back_ios_new</span>
+            </a>
             <div class="relative mb-4 group cursor-pointer">
                 <div class="w-24 h-24 rounded-full p-1 bg-gradient-to-tr from-primary to-transparent">
                     <img alt="Profile Picture"
@@ -81,11 +65,9 @@
             </div>
             <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-1">Capt. James Sterling</h1>
             <p class="text-sm font-medium text-primary uppercase tracking-widest mb-5">Platinum Owner</p>
-            <button
-                class="px-6 py-2.5 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 text-sm font-semibold flex items-center gap-2 group">
+            <button class="btn-secondary flex items-center gap-2">
                 <span>Edit Profile</span>
-                <span
-                    class="material-icons-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                <span class="material-icons text-sm">arrow_forward</span>
             </button>
         </header>
         <main class="flex-1 px-5 pb-12 overflow-y-auto no-scrollbar space-y-6">
@@ -107,7 +89,7 @@
                         <span class="material-icons-outlined text-gray-300 dark:text-gray-600">chevron_right</span>
                     </a>
                     <a class="flex items-center p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group border-b border-gray-50 dark:border-gray-800/50"
-                        href="#">
+                        href="fuel_history.html">
                         <div
                             class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 group-hover:scale-110 transition-transform">
                             <span class="material-icons-outlined">local_gas_station</span>
@@ -121,7 +103,7 @@
                         <span class="material-icons-outlined text-gray-300 dark:text-gray-600">chevron_right</span>
                     </a>
                     <a class="flex items-center p-4 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group"
-                        href="#">
+                        href="maintenancen_history.html">
                         <div
                             class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4 group-hover:scale-110 transition-transform">
                             <span class="material-icons-outlined">handyman</span>

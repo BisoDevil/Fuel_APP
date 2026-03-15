@@ -9,11 +9,11 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap"
         rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="../../_src/output.css" rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -112,6 +112,14 @@
             display: none;
         }
     </style>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-rounded {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
 </head>
 
 <body
@@ -119,20 +127,19 @@
     <!-- Mobile Container -->
     <div class="w-full max-w-md  dark:bg-[#1a0a0a] min-h-screen relative shadow-2xl overflow-y-auto flex flex-col">
         <!-- Header -->
-        <header
-            class="pt-12 pb-4 px-6 flex items-center justify-between z-10 sticky top-0 dark:bg-[#1a0a0a]/95 backdrop-blur-md">
-            <button
-                class="p-2 -ml-2 hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-colors text-slate-600 dark:text-slate-300">
-                <span class="material-icons">arrow_back</span>
-            </button>
+        <header class="px-6 pt-12 pb-4 flex justify-between items-center z-10 sticky top-0 dark:bg-[#1a0a0a]/95 backdrop-blur-md">
+            <a href="home.html"
+                class="w-10 h-10 rounded-full bg-white dark:bg-surface-dark shadow-md flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <span class="material-symbols-rounded text-gray-800 dark:text-white">arrow_back_ios_new</span>
+            </a>
             <div class="text-center">
                 <h1 class="text-lg font-bold text-slate-900 dark:text-white">Port Hercules</h1>
                 <p
                     class="text-xs font-medium text-slate-400 uppercase tracking-wider flex items-center justify-center gap-1">
-                    <span class="material-icons text-[10px] text-primary">near_me</span> Monaco
+                    <span class="material-symbols-rounded text-[10px] text-primary">near_me</span> Monaco
                 </p>
             </div>
-            <div class="w-10"></div>
+            <div class="w-10 h-10"></div>
         </header>
         <!-- Scrollable Content -->
         <main class="flex-1 pb-6 px-6">
@@ -181,7 +188,7 @@
                             style="transform: rotate(-45deg);">
                             <div class="h-full w-full relative">
                                 <span
-                                    class="material-icons text-primary absolute top-2 left-1/2 -translate-x-1/2 text-xl drop-shadow-md">navigation</span>
+                                    class="material-symbols-outlined text-primary absolute top-2 left-1/2 -translate-x-1/2 text-xl drop-shadow-md">navigation</span>
                             </div>
                         </div>
                     </div>
@@ -217,7 +224,7 @@
                         </div>
                         <div class="relative z-10">
                             <div class="flex items-center gap-2 mb-2">
-                                <span class="material-icons text-primary text-xl">waves</span>
+                                <span class="material-symbols-outlined text-primary text-xl">waves</span>
                                 <span class="text-[10px] font-bold text-slate-400 uppercase">Height</span>
                             </div>
                             <p class="text-3xl font-extrabold text-slate-900 dark:text-white">1.2<span
@@ -229,7 +236,7 @@
                     <div
                         class="snap-start flex-none w-36 bg-white dark:bg-[#230f0f] border border-slate-100 dark:border-white/5 rounded-xl p-4 shadow-sm">
                         <div class="flex items-center gap-2 mb-2">
-                            <span class="material-icons text-slate-400 text-xl">timer</span>
+                            <span class="material-symbols-outlined text-slate-400 text-xl">timer</span>
                             <span class="text-[10px] font-bold text-slate-400 uppercase">Period</span>
                         </div>
                         <p class="text-3xl font-extrabold text-slate-900 dark:text-white">8<span
@@ -240,13 +247,13 @@
                     <div
                         class="snap-start flex-none w-36 bg-white dark:bg-[#230f0f] border border-slate-100 dark:border-white/5 rounded-xl p-4 shadow-sm">
                         <div class="flex items-center gap-2 mb-2">
-                            <span class="material-icons text-slate-400 text-xl">water</span>
+                            <span class="material-symbols-outlined text-slate-400 text-xl">water</span>
                             <span class="text-[10px] font-bold text-slate-400 uppercase">Tide</span>
                         </div>
                         <p class="text-3xl font-extrabold text-slate-900 dark:text-white">+0.4<span
                                 class="text-sm font-medium text-slate-500 ml-1">m</span></p>
                         <div class="flex items-center gap-1 mt-1">
-                            <span class="material-icons text-primary text-xs animate-bounce">arrow_upward</span>
+                            <span class="material-symbols-outlined text-primary text-xs animate-bounce">arrow_upward</span>
                             <p class="text-xs text-slate-500">Rising</p>
                         </div>
                     </div>
@@ -335,7 +342,7 @@
                                 <span class="text-xs font-bold text-slate-900 dark:text-white">TODAY</span>
                                 <span class="text-[10px] text-slate-400">12 OCT</span>
                             </div>
-                            <span class="material-icons text-amber-500 text-2xl">wb_sunny</span>
+                            <span class="material-symbols-outlined text-amber-500 text-2xl">wb_sunny</span>
                             <div class="flex flex-col">
                                 <span class="font-bold text-slate-900 dark:text-white">Sunny</span>
                                 <span class="text-xs text-slate-500">Vis: 10nm</span>
@@ -354,7 +361,7 @@
                                 <span class="text-xs font-bold text-slate-500">SUN</span>
                                 <span class="text-[10px] text-slate-400">13 OCT</span>
                             </div>
-                            <span class="material-icons text-slate-400 text-2xl">cloud</span>
+                            <span class="material-symbols-outlined text-slate-400 text-2xl">cloud</span>
                             <div class="flex flex-col">
                                 <span class="font-bold text-slate-700 dark:text-slate-300">Cloudy</span>
                                 <span class="text-xs text-slate-500">Vis: 8nm</span>
@@ -373,7 +380,7 @@
                                 <span class="text-xs font-bold text-slate-500">MON</span>
                                 <span class="text-[10px] text-slate-400">14 OCT</span>
                             </div>
-                            <span class="material-icons text-slate-400 text-2xl">water_drop</span>
+                            <span class="material-symbols-outlined text-slate-400 text-2xl">water_drop</span>
                             <div class="flex flex-col">
                                 <span class="font-bold text-slate-700 dark:text-slate-300">Rain</span>
                                 <span class="text-xs text-slate-500">Vis: 4nm</span>
@@ -392,7 +399,7 @@
                                 <span class="text-xs font-bold text-slate-500">TUE</span>
                                 <span class="text-[10px] text-slate-400">15 OCT</span>
                             </div>
-                            <span class="material-icons text-slate-400 text-2xl">wb_cloudy</span>
+                            <span class="material-symbols-outlined text-slate-400 text-2xl">wb_cloudy</span>
                             <div class="flex flex-col">
                                 <span class="font-bold text-slate-700 dark:text-slate-300">Overcast</span>
                                 <span class="text-xs text-slate-500">Vis: 6nm</span>

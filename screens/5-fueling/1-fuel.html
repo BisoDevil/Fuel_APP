@@ -7,94 +7,71 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Fueling</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="../../_src/unified-styles.css" rel="stylesheet">
     <link href="../../_src/output.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#f50000",
+                        primary: "#f50000",
                         "primary-dark": "#c20000",
+                        "primary-50": "#fff0f0",
                         "background-light": "#f8f5f5",
-                        "background-dark": "#230f0f",
+                        "background-dark": "#120808",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1E1E1E"
                     },
                     fontFamily: {
-                        "display": ["Montserrat", "sans-serif"]
+                        display: ["Montserrat", "sans-serif"],
+                        sans: ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "0.75rem",
+                        xl: "1rem",
+                        "2xl": "1.5rem"
+                    },
+                    boxShadow: {
+                        soft: "0 4px 20px -2px rgba(0, 0, 0, 0.05)",
+                        glow: "0 4px 20px -2px rgba(245, 0, 0, 0.3)"
                     }
-                },
-            },
+                }
+            }
         }
     </script>
     <style>
         @keyframes pulse-glow {
-
-            0%,
-            100% {
-                filter: drop-shadow(0 0 20px rgba(245, 0, 0, 0.3));
-            }
-
-            50% {
-                filter: drop-shadow(0 0 40px rgba(245, 0, 0, 0.6));
-            }
+            0%, 100% { filter: drop-shadow(0 0 20px rgba(245, 0, 0, 0.3)); }
+            50% { filter: drop-shadow(0 0 40px rgba(245, 0, 0, 0.6)); }
         }
-
         @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-5px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
         }
-
-        .progress-ring {
-            transform: rotate(-90deg);
-            transform-origin: 50% 50%;
+        .progress-ring { transform: rotate(-90deg); transform-origin: 50% 50%; }
+        .progress-ring-circle { transition: stroke-dashoffset 0.3s ease-out; }
+        .glow-pulse { animation: pulse-glow 2s ease-in-out infinite; }
+        .float-animation { animation: float 3s ease-in-out infinite; }
+        .btn-active { background: linear-gradient(135deg, #f50000 0%, #c20000 100%); box-shadow: 0 0 30px rgba(245, 0, 0, 0.4); }
+        .glass-panel { background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 0.75rem; }
+        .glass-panel-dark { background: rgba(42, 18, 18, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 0.75rem; }
+    </style>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-
-        .progress-ring-circle {
-            transition: stroke-dashoffset 0.3s ease-out;
-        }
-
-        .glow-pulse {
-            animation: pulse-glow 2s ease-in-out infinite;
-        }
-
-        .float-animation {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .btn-active {
-            background: linear-gradient(135deg, #f50000 0%, #c20000 100%);
-            box-shadow: 0 0 30px rgba(245, 0, 0, 0.4);
-        }
-
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-        }
-
-        .glass-panel-dark {
-            background: rgba(42, 18, 18, 0.6);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .material-symbols-rounded {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
     </style>
 </head>
 
-<body
-    class="bg-background-light nautical-lines dark:bg-background-dark text-slate-800 dark:text-slate-100 font-display min-h-screen flex justify-center selection:bg-primary/20">
+<body class="bg-background-light nautical-lines dark:bg-background-dark text-slate-800 dark:text-slate-100 font-sans min-h-screen flex justify-center selection:bg-primary/20">
     <!-- Mobile Container -->
     <div class="w-full max-w-md min-h-screen flex flex-col relative overflow-hidden">
         <!-- Background Effect -->
@@ -107,16 +84,17 @@
         </div>
 
         <!-- Header -->
-        <header class="pt-12 pb-6 px-6 flex items-center justify-between relative z-10">
-            <button class="p-2 -ml-2 hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-colors">
-                <span class="material-icons text-slate-600 dark:text-slate-400">arrow_back</span>
-            </button>
+        <header class="px-6 pt-12 pb-4 flex justify-between items-center relative z-10">
+            <a href="../4-booking/4-fuel-start-qr.html"
+                class="w-10 h-10 rounded-full bg-white dark:bg-surface-dark shadow-md flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <span class="material-symbols-rounded text-gray-800 dark:text-white">arrow_back_ios_new</span>
+            </a>
             <div class="text-center">
                 <h1 class="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-widest">Station 12
                 </h1>
                 <p class="text-xs text-primary">Premium 95</p>
             </div>
-            <div class="w-10"></div>
+            <div class="w-10 h-10"></div>
         </header>
 
         <!-- Main Content -->
@@ -154,7 +132,7 @@
                         <span class="text-xl text-slate-400 ml-1">L</span>
                     </div>
                     <div class="flex items-center gap-2 mt-2">
-                        <span class="material-icons text-primary text-sm animate-pulse">local_gas_station</span>
+                        <span class="material-symbols-outlined text-primary text-sm animate-pulse">local_gas_station</span>
                         <span id="percentage" class="text-sm text-slate-400">0%</span>
                     </div>
                 </div>
@@ -165,7 +143,7 @@
                 <div class="flex justify-between items-center">
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                            <span class="material-icons text-primary">local_gas_station</span>
+                            <span class="material-symbols-outlined text-primary">local_gas_station</span>
                         </div>
                         <div>
                             <p class="font-semibold text-slate-900 dark:text-white">Premium 95</p>
@@ -181,18 +159,18 @@
             <!-- Stats Grid -->
             <div class="w-full grid grid-cols-3 gap-3 mb-8">
                 <div class="glass-panel dark:glass-panel-dark rounded-2xl p-4 text-center">
-                    <span class="material-icons text-primary text-lg mb-1">schedule</span>
+                    <span class="material-symbols-outlined text-primary text-lg mb-1">schedule</span>
                     <p class="text-xs text-slate-500 mb-1">Duration</p>
                     <p id="duration" class="font-display text-lg font-semibold">04:32</p>
                 </div>
                 <div class="glass-panel dark:glass-panel-dark rounded-2xl p-4 text-center">
-                    <span class="material-icons text-primary text-lg mb-1">speed</span>
+                    <span class="material-symbols-outlined text-primary text-lg mb-1">speed</span>
                     <p class="text-xs text-slate-500 mb-1">Flow Rate</p>
                     <p class="font-display text-lg font-semibold">42<span
                             class="text-xs text-slate-400 ml-0.5">L/min</span></p>
                 </div>
                 <div class="glass-panel dark:glass-panel-dark rounded-2xl p-4 text-center">
-                    <span class="material-icons text-primary text-lg mb-1">euro</span>
+                    <span class="material-symbols-outlined text-primary text-lg mb-1">euro</span>
                     <p class="text-xs text-slate-500 mb-1">Cost</p>
                     <p id="cost" class="font-display text-lg font-semibold">€58.32</p>
                 </div>
@@ -211,7 +189,7 @@
             </div>
 
             <!-- Controls -->
-            <button class="w-full btn-active text-white font-semibold py-4 rounded-2xl transition-all active:scale-95">
+            <button class="w-full btn-active text-white font-semibold py-3 px-5 rounded-lg transition-all active:scale-[0.98]">
                 PAUSE
             </button>
         </div>

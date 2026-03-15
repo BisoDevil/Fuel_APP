@@ -10,10 +10,8 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap"
         rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
 
     <script>
         tailwind.config = {
@@ -41,6 +39,14 @@
             },
         }
     </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-rounded {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
 </head>
 
 <body
@@ -87,7 +93,7 @@
                 class="absolute top-[20%] left-6 glass-widget p-3 rounded-xl shadow-soft flex items-center gap-3 animate-[float_6s_ease-in-out_infinite]">
                 <div
                     class="w-10 h-10 rounded-lg bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-orange-500">
-                    <span class="material-icons text-xl">wb_sunny</span>
+                    <span class="material-symbols-outlined text-xl">wb_sunny</span>
                 </div>
                 <div>
                     <p class="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wide">Temp</p>
@@ -99,7 +105,7 @@
                 class="absolute top-[35%] right-6 glass-widget p-3 rounded-xl shadow-soft flex items-center gap-3 animate-[float_5s_ease-in-out_infinite_reverse]">
                 <div
                     class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-500">
-                    <span class="material-icons text-xl transform rotate-45">air</span>
+                    <span class="material-symbols-outlined text-xl transform rotate-45">air</span>
                 </div>
                 <div>
                     <p class="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wide">Wind</p>
@@ -112,7 +118,7 @@
                 class="absolute bottom-[45%] left-12 glass-widget p-3 rounded-xl shadow-soft flex items-center gap-3 animate-[float_7s_ease-in-out_infinite_1s]">
                 <div
                     class="w-10 h-10 rounded-lg bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center text-teal-600">
-                    <span class="material-icons text-xl">waves</span>
+                    <span class="material-symbols-outlined text-xl">waves</span>
                 </div>
                 <div>
                     <p class="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wide">Tide</p>
@@ -146,7 +152,7 @@
             <a href="../2-auth/login.html"
                 class="w-full bg-primary hover:bg-red-600 text-white font-bold text-lg py-4 rounded-xl shadow-lg shadow-red-500/30 transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 group">
                 Get Started
-                <span class="material-icons text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </a>
             <!-- Decorative Elements (Subtle) -->
             <div
