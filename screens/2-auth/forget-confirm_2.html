@@ -5,34 +5,47 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Check Your Inbox - MARITIMA</title>
+    <title>Check Your Inbox - MASTER</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="../../_src/unified-styles.css" rel="stylesheet">
     <link href="../../_src/output.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
     <script>tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#f50000", "primary-dark": "#c20000", "primary-50": "#fff0f0", "background-light": "#f8f5f5", "background-dark": "#120808", "surface-light": "#ffffff", "surface-dark": "#1E1E1E" }, fontFamily: { display: ["Montserrat", "sans-serif"], sans: ["Plus Jakarta Sans", "sans-serif"] }, borderRadius: { DEFAULT: "0.5rem", lg: "0.75rem", xl: "1rem", "2xl": "1.5rem" }, boxShadow: { soft: "0 4px 20px -2px rgba(0, 0, 0, 0.05)", glow: "0 4px 20px -2px rgba(245, 0, 0, 0.3)" } } } };</script>
     <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         .material-symbols-rounded {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .nautical-watermark { background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 L100 50 L50 100 L0 50 Z' fill='none' stroke='%23f50000' stroke-opacity='0.03' stroke-width='1'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%23f50000' stroke-opacity='0.03' stroke-width='1'/%3E%3C/svg%3E"); }
-        body { min-height: max(884px, 100dvh); }
+
+        .nautical-watermark {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 L100 50 L50 100 L0 50 Z' fill='none' stroke='%23f50000' stroke-opacity='0.03' stroke-width='1'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%23f50000' stroke-opacity='0.03' stroke-width='1'/%3E%3C/svg%3E");
+        }
+
+        body {
+            min-height: max(884px, 100dvh);
+        }
     </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark font-sans min-h-screen flex flex-col items-center justify-center relative overflow-hidden text-slate-800 dark:text-white">
+<body
+    class="bg-background-light dark:bg-background-dark font-sans min-h-screen flex flex-col items-center justify-center relative overflow-hidden text-slate-800 dark:text-white">
     <div class="absolute inset-0 nautical-watermark pointer-events-none z-0"></div>
     <div class="w-full max-w-md px-8 py-10 relative z-10 flex flex-col h-full justify-center text-center">
         <div class="flex flex-col items-center mb-8">
             <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                 <span class="material-symbols-outlined text-primary text-5xl">sailing</span>
             </div>
-            <h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">MARITIMA</h1>
+            <h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">MASTER</h1>
             <p class="text-sm text-slate-500 mt-1 tracking-widest uppercase text-[0.65rem]">Premium Yacht Management</p>
         </div>
         <div class="flex flex-col items-center space-y-8">

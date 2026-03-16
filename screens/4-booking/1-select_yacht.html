@@ -7,21 +7,39 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Add Yacht - Type Selection V1</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="../../_src/unified-styles.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
-    <script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#f50000", "primary-dark": "#c20000", "primary-50": "#fff0f0", "primary-100": "#ffdede", "primary-200": "#ffc2c2", "background-light": "#f8f5f5", "background-dark": "#120808", "surface-light": "#ffffff", "surface-dark": "#1E1E1E" }, fontFamily: { display: "Montserrat", sans: ["Plus Jakarta Sans", "sans-serif"] }, borderRadius: { DEFAULT: "0.5rem", lg: "0.75rem", xl: "1rem", "2xl": "1.5rem" }, boxShadow: { soft: "0 4px 20px -2px rgba(245, 0, 0, 0.05)", glow: "0 0 15px rgba(245, 0, 0, 0.3)" } } } };</script>
+    <link href="../../_src/output.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script
+        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#f50000", "primary-dark": "#c20000", "primary-50": "#fff0f0", "primary-100": "#ffdede", "primary-200": "#ffc2c2", "background-light": "#f8f5f5", "background-dark": "#120808", "surface-light": "#ffffff", "surface-dark": "#1E1E1E" }, fontFamily: { display: "Montserrat", sans: ["Plus Jakarta Sans", "sans-serif"] }, borderRadius: { DEFAULT: "0.5rem", lg: "0.75rem", xl: "1rem", "2xl": "1.5rem" }, boxShadow: { soft: "0 4px 20px -2px rgba(245, 0, 0, 0.05)", glow: "0 0 15px rgba(245, 0, 0, 0.3)" } } } };</script>
     <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         .material-symbols-rounded {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        body { min-height: max(884px, 100dvh); }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        body {
+            min-height: max(884px, 100dvh);
+        }
     </style>
 </head>
 
@@ -30,7 +48,7 @@
     <div
         class="w-full max-w-md bg-background-light dark:bg-background-dark min-h-screen flex flex-col relative overflow-hidden shadow-2xl">
         <header class="px-6 pt-12 pb-4 flex justify-between items-center z-10">
-            <a href="../../3-home/home.html"
+            <a href="/screens/3-home/home.html"
                 class="w-10 h-10 rounded-full bg-white dark:bg-surface-dark shadow-md flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                 <span class="material-symbols-rounded text-gray-800 dark:text-white">arrow_back_ios_new</span>
             </a>
@@ -38,7 +56,7 @@
         </header>
         <main class="flex-1 px-6 pb-24 overflow-y-auto no-scrollbar">
             <div class="mb-8 mt-2">
-                <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Select Type</h1>
+                <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Vessel information</h1>
                 <p class="text-gray-500 dark:text-gray-400 text-sm">Choose your vessel type and details.</p>
             </div>
             <div class="mb-10">
@@ -65,6 +83,18 @@
                             class="w-16 h-16 mb-3 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center group-hover:bg-primary-50 dark:group-hover:bg-primary-900/10 transition-colors">
                             <span
                                 class="material-symbols-outlined text-gray-400 dark:text-gray-500 group-hover:text-primary text-4xl transition-colors"
+                                style="font-variation-settings: 'FILL' 1;">speed</span>
+                        </div>
+                        <span
+                            class="font-semibold text-gray-500 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-200 text-center text-sm leading-tight">Sport
+                            Boat / Zodiac</span>
+                    </div>
+                    <div
+                        class="relative min-w-[140px] h-[160px] rounded-2xl bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary/50 flex flex-col items-center justify-center p-4 snap-center cursor-pointer transition-transform active:scale-95 group">
+                        <div
+                            class="w-16 h-16 mb-3 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center group-hover:bg-primary-50 dark:group-hover:bg-primary-900/10 transition-colors">
+                            <span
+                                class="material-symbols-outlined text-gray-400 dark:text-gray-500 group-hover:text-primary text-4xl transition-colors"
                                 style="font-variation-settings: 'FILL' 1;">sailing</span>
                         </div>
                         <span
@@ -82,18 +112,7 @@
                         <span
                             class="font-semibold text-gray-500 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-200 text-center text-sm leading-tight">Catamaran</span>
                     </div>
-                    <div
-                        class="relative min-w-[140px] h-[160px] rounded-2xl bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary/50 flex flex-col items-center justify-center p-4 snap-center cursor-pointer transition-transform active:scale-95 group">
-                        <div
-                            class="w-16 h-16 mb-3 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center group-hover:bg-primary-50 dark:group-hover:bg-primary-900/10 transition-colors">
-                            <span
-                                class="material-symbols-outlined text-gray-400 dark:text-gray-500 group-hover:text-primary text-4xl transition-colors"
-                                style="font-variation-settings: 'FILL' 1;">speed</span>
-                        </div>
-                        <span
-                            class="font-semibold text-gray-500 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-200 text-center text-sm leading-tight">Sport
-                            Boat</span>
-                    </div>
+
                 </div>
             </div>
             <div class="space-y-6">
@@ -101,31 +120,90 @@
                 <div class="group">
                     <label
                         class="block text-xs font-medium text-gray-500 dark:text-gray-400 ml-4 mb-2 uppercase tracking-wider"
-                        for="manufacturer">Manufacturer</label>
+                        for="boatName">Boat Name</label>
                     <div class="relative">
                         <input
-                            class="w-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white text-base rounded-full py-4 px-6 shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-600"
-                            id="manufacturer" placeholder="e.g. Sunseeker" type="text" />
+                            class="w-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white text-base rounded-2xl py-4 px-6 shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-600"
+                            id="boatName" placeholder="e.g. My Yacht" type="text" />
                         <span
-                            class="material-symbols-outlined absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors">business</span>
+                            class="material-symbols-outlined absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors">flag</span>
                     </div>
                 </div>
                 <div class="group">
                     <label
                         class="block text-xs font-medium text-gray-500 dark:text-gray-400 ml-4 mb-2 uppercase tracking-wider"
-                        for="model">Model</label>
+                        for="manufacturer">Manufacturer</label>
                     <div class="relative">
                         <input
-                            class="w-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white text-base rounded-full py-4 px-6 shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-600"
-                            id="model" placeholder="e.g. Predator 74" type="text" />
+                            class="w-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white text-base rounded-2xl py-4 px-6 shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-600"
+                            id="manufacturer" placeholder="e.g. Sunseeker" type="text" />
                         <span
-                            class="material-symbols-outlined absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors">sell</span>
+                            class="material-symbols-outlined absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors">business</span>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="group flex-1">
+                        <label
+                            class="block text-xs font-medium text-gray-500 dark:text-gray-400 ml-4 mb-2 uppercase tracking-wider"
+                            for="length">Length (m)</label>
+                        <div class="relative">
+                            <input
+                                class="w-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white text-base rounded-2xl py-4 px-6 shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-600"
+                                id="length" placeholder="e.g. 12.5" type="number" step="0.1" />
+                            <span
+                                class="material-symbols-outlined absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors">straighten</span>
+                        </div>
+                    </div>
+                    <div class="group flex-1">
+                        <label
+                            class="block text-xs font-medium text-gray-500 dark:text-gray-400 ml-4 mb-2 uppercase tracking-wider"
+                            for="width">Width (m)</label>
+                        <div class="relative">
+                            <input
+                                class="w-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white text-base rounded-2xl py-4 px-6 shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-600"
+                                id="width" placeholder="e.g. 4.2" type="number" step="0.1" />
+                            <span
+                                class="material-symbols-outlined absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors">straighten</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group">
+                    <label
+                        class="block text-xs font-medium text-gray-500 dark:text-gray-400 ml-4 mb-2 uppercase tracking-wider"
+                        for="fuelType">Fuel Type</label>
+                    <div class="relative">
+                        <select
+                            class="w-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white text-base rounded-2xl py-4 px-6 shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 appearance-none cursor-pointer"
+                            id="fuelType">
+                            <option value="" disabled selected>Select fuel type</option>
+                            <option value="diesel">Diesel</option>
+                            <option value="gasoline">Gasoline</option>
+                            <option value="electric">Electric</option>
+                            <option value="hybrid">Hybrid</option>
+                        </select>
+                        <span
+                            class="material-symbols-outlined absolute right-12 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors pointer-events-none">local_gas_station</span>
+                        <span
+                            class="material-symbols-outlined absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+                <div class="group">
+                    <label
+                        class="block text-xs font-medium text-gray-500 dark:text-gray-400 ml-4 mb-2 uppercase tracking-wider"
+                        for="chaseirNo">Hull No</label>
+                    <div class="relative">
+                        <input
+                            class="w-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white text-base rounded-2xl py-4 px-6 shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-600"
+                            id="chaseirNo" placeholder="e.g. ABC1234" type="text" />
+                        <span
+                            class="material-symbols-outlined absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors">tag</span>
                     </div>
                 </div>
             </div>
         </main>
-        <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark pt-12">
-            <a href="2-date.html" class="btn-primary w-full justify-between">
+        <div
+            class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark pt-12 ">
+            <a href="2-date.html" class="btn-primary rounded-xl w-full justify-between">
                 <span class="text-lg">Next Step</span>
                 <span class="material-symbols-outlined">arrow_forward</span>
             </a>

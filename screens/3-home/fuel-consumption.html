@@ -2,10 +2,11 @@
 
 <html lang="en">
 
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Average Fuel Consumption</title>
+    <title>Yacht Fuel Consumption</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="../../_src/output.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"
@@ -13,7 +14,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         tailwind.config = {
@@ -127,6 +130,7 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         .material-symbols-rounded {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
@@ -157,13 +161,29 @@
                 </a>
                 <div class="text-center">
                     <h1 class="text-lg font-bold text-slate-900 dark:text-white">Fuel Consumption</h1>
-                    <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-0.5">Analytics</p>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-0.5">Yacht Analytics</p>
                 </div>
                 <button
                     class="w-10 h-10 rounded-full bg-white dark:bg-surface-dark shadow-md flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                     <span class="material-symbols-rounded text-gray-800 dark:text-white">more_vert</span>
                 </button>
             </header>
+
+            <!-- Period Selector -->
+            <div class="flex gap-2 mb-5">
+                <button onclick="setPeriod('month')" id="btn-month"
+                    class="period-btn-active flex-1 py-2.5 rounded-xl text-xs font-semibold text-white transition-all">
+                    Monthly
+                </button>
+                <button onclick="setPeriod('quarter')" id="btn-quarter"
+                    class="flex-1 py-2.5 rounded-xl text-xs font-semibold text-slate-500 dark:text-slate-400 bg-white dark:bg-white/5 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-white/10 transition-all">
+                    Quarterly
+                </button>
+                <button onclick="setPeriod('year')" id="btn-year"
+                    class="flex-1 py-2.5 rounded-xl text-xs font-semibold text-slate-500 dark:text-slate-400 bg-white dark:bg-white/5 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-white/10 transition-all">
+                    Yearly
+                </button>
+            </div>
 
             <!-- Main Gauge Card -->
             <div class="glass-panel dark:glass-panel-dark rounded-3xl p-6 mb-5 relative overflow-hidden">
@@ -176,11 +196,11 @@
                         <div class="flex items-center gap-3">
                             <div
                                 class="w-11 h-11 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center shadow-lg shadow-primary/25">
-                                <span class="material-symbols-outlined text-white text-xl">speed</span>
+                                <span class="material-symbols-outlined text-white text-xl">water</span>
                             </div>
                             <div>
-                                <p class="font-semibold text-slate-900 dark:text-white text-sm">Average Consumption</p>
-                                <p class="text-[11px] text-slate-500 dark:text-slate-400">Last 30 days</p>
+                                <p class="font-semibold text-slate-900 dark:text-white text-sm">Avg Fuel Consumption</p>
+                                <p class="text-[11px] text-slate-500 dark:text-slate-400" id="period-label">Last 6 Months</p>
                             </div>
                         </div>
                         <div
@@ -209,9 +229,8 @@
                                     transform="rotate(135 60 60)" class="transition-all duration-1000" />
                             </svg>
                             <div class="absolute inset-0 flex flex-col items-center justify-center">
-                                <span
-                                    class="text-4xl font-bold text-slate-900 dark:text-white tracking-tight">7.2</span>
-                                <span class="text-xs text-slate-400 -mt-1">L/100km</span>
+                                <span class="text-4xl font-bold text-slate-900 dark:text-white tracking-tight" id="avg-value">7.2</span>
+                                <span class="text-xs text-slate-400 -mt-1" id="avg-unit">L/month</span>
                             </div>
                         </div>
                     </div>
@@ -220,16 +239,16 @@
                     <div class="grid grid-cols-3 gap-3 pt-3 border-t border-slate-200/50 dark:border-slate-700/50">
                         <div class="text-center">
                             <p class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5">Best</p>
-                            <p class="text-sm font-bold text-green-600 dark:text-green-400">5.8</p>
+                            <p class="text-sm font-bold text-green-600 dark:text-green-400" id="best-value">118</p>
                         </div>
                         <div class="text-center border-x border-slate-200/50 dark:border-slate-700/50">
                             <p class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5">Worst</p>
-                            <p class="text-sm font-bold text-orange-500">9.4</p>
+                            <p class="text-sm font-bold text-orange-500" id="worst-value">168</p>
                         </div>
                         <div class="text-center">
-                            <p class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5">Avg Speed</p>
-                            <p class="text-sm font-bold text-slate-700 dark:text-slate-300">62<span
-                                    class="text-[10px] font-normal text-slate-400">km/h</span></p>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5">Engine Hours</p>
+                            <p class="text-sm font-bold text-slate-700 dark:text-slate-300" id="hours-value">48<span
+                                    class="text-[10px] font-normal text-slate-400">hrs</span></p>
                         </div>
                     </div>
                 </div>
@@ -240,13 +259,13 @@
                 <div class="glass-panel dark:glass-panel-dark glass-panel-hover rounded-2xl p-4">
                     <div class="flex items-center justify-between mb-3">
                         <div class="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center">
-                            <span class="material-symbols-outlined text-primary text-lg">route</span>
+                            <span class="material-symbols-outlined text-primary text-lg">sailing</span>
                         </div>
-                        <span class="text-[10px] text-green-600 font-medium">+12%</span>
+                        <span class="text-[10px] text-green-600 font-medium" id="distance-change">+8%</span>
                     </div>
-                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Distance</p>
-                    <p class="text-xl font-bold text-slate-900 dark:text-white">2,450<span
-                            class="text-xs font-normal text-slate-400 ml-1">km</span></p>
+                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Nautical Miles</p>
+                    <p class="text-xl font-bold text-slate-900 dark:text-white" id="distance-value">185<span
+                            class="text-xs font-normal text-slate-400 ml-1">nm</span></p>
                 </div>
                 <div class="glass-panel dark:glass-panel-dark glass-panel-hover rounded-2xl p-4">
                     <div class="flex items-center justify-between mb-3">
@@ -255,7 +274,7 @@
                         </div>
                     </div>
                     <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Total Fuel</p>
-                    <p class="text-xl font-bold text-slate-900 dark:text-white">176.4<span
+                    <p class="text-xl font-bold text-slate-900 dark:text-white" id="fuel-value">892<span
                             class="text-xs font-normal text-slate-400 ml-1">L</span></p>
                 </div>
                 <div class="glass-panel dark:glass-panel-dark glass-panel-hover rounded-2xl p-4">
@@ -264,94 +283,18 @@
                             <span class="material-symbols-outlined text-amber-500 text-lg">payments</span>
                         </div>
                     </div>
-                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Total Cost</p>
-                    <p class="text-xl font-bold text-slate-900 dark:text-white">€317.52</p>
+                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Fuel Cost</p>
+                    <p class="text-xl font-bold text-slate-900 dark:text-white" id="cost-value">€1,284</p>
                 </div>
                 <div class="glass-panel dark:glass-panel-dark glass-panel-hover rounded-2xl p-4">
                     <div class="flex items-center justify-between mb-3">
                         <div class="w-9 h-9 bg-purple-500/10 rounded-lg flex items-center justify-center">
-                            <span class="material-symbols-outlined text-purple-500 text-lg">euro_symbol</span>
+                            <span class="material-symbols-outlined text-purple-500 text-lg">schedule</span>
                         </div>
                     </div>
-                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Cost/km</p>
-                    <p class="text-xl font-bold text-slate-900 dark:text-white">€0.13</p>
-                </div>
-            </div>
-
-            <!-- Fuel Type Breakdown -->
-            <div class="glass-panel dark:glass-panel-dark rounded-2xl p-5 mb-5">
-                <div class="flex items-center justify-between mb-5">
-                    <h2 class="text-sm font-semibold text-slate-900 dark:text-white">By Fuel Type</h2>
-                    <span class="material-symbols-outlined text-slate-400 text-lg">expand_more</span>
-                </div>
-                <div class="space-y-5">
-                    <div class="group">
-                        <div class="flex justify-between items-center mb-2">
-                            <div class="flex items-center gap-2.5">
-                                <div
-                                    class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                                    <span class="material-symbols-outlined text-primary text-sm">local_gas_station</span>
-                                </div>
-                                <div>
-                                    <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Premium
-                                        95</span>
-                                    <p class="text-[10px] text-slate-400">1,820 km</p>
-                                </div>
-                            </div>
-                            <div class="text-right">
-                                <span class="text-sm font-bold text-slate-900 dark:text-white">6.8</span>
-                                <span class="text-[10px] text-slate-400 ml-1">L/100km</span>
-                            </div>
-                        </div>
-                        <div class="h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                            <div class="h-full progress-bar-animated rounded-full"
-                                style="--progress-color: #f50000; --progress-color-end: #c20000; width: 75%"></div>
-                        </div>
-                    </div>
-                    <div class="group">
-                        <div class="flex justify-between items-center mb-2">
-                            <div class="flex items-center gap-2.5">
-                                <div
-                                    class="w-8 h-8 bg-blue-500/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                                    <span class="material-symbols-outlined text-blue-500 text-sm">local_gas_station</span>
-                                </div>
-                                <div>
-                                    <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Diesel</span>
-                                    <p class="text-[10px] text-slate-400">420 km</p>
-                                </div>
-                            </div>
-                            <div class="text-right">
-                                <span class="text-sm font-bold text-slate-900 dark:text-white">8.1</span>
-                                <span class="text-[10px] text-slate-400 ml-1">L/100km</span>
-                            </div>
-                        </div>
-                        <div class="h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                            <div class="h-full progress-bar-animated rounded-full"
-                                style="--progress-color: #3b82f6; --progress-color-end: #1d4ed8; width: 60%"></div>
-                        </div>
-                    </div>
-                    <div class="group">
-                        <div class="flex justify-between items-center mb-2">
-                            <div class="flex items-center gap-2.5">
-                                <div
-                                    class="w-8 h-8 bg-green-500/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                                    <span class="material-symbols-outlined text-green-500 text-sm">bolt</span>
-                                </div>
-                                <div>
-                                    <span class="text-sm font-medium text-slate-700 dark:text-slate-200">Electric</span>
-                                    <p class="text-[10px] text-slate-400">210 km</p>
-                                </div>
-                            </div>
-                            <div class="text-right">
-                                <span class="text-sm font-bold text-slate-900 dark:text-white">18.2</span>
-                                <span class="text-[10px] text-slate-400 ml-1">kWh</span>
-                            </div>
-                        </div>
-                        <div class="h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                            <div class="h-full progress-bar-animated rounded-full"
-                                style="--progress-color: #22c55e; --progress-color-end: #16a34a; width: 45%"></div>
-                        </div>
-                    </div>
+                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Avg/Day</p>
+                    <p class="text-xl font-bold text-slate-900 dark:text-white" id="avg-per-day">89<span
+                            class="text-xs font-normal text-slate-400 ml-1">L</span></p>
                 </div>
             </div>
 
@@ -374,15 +317,15 @@
                 <div class="flex justify-between mt-3 pt-3 border-t border-slate-200/50 dark:border-slate-700/50">
                     <div class="text-center">
                         <p class="text-[10px] text-slate-400 uppercase">Min</p>
-                        <p class="text-sm font-bold text-green-500">5.8</p>
+                        <p class="text-sm font-bold text-green-500">780</p>
                     </div>
                     <div class="text-center">
                         <p class="text-[10px] text-slate-400 uppercase">Avg</p>
-                        <p class="text-sm font-bold text-primary">7.2</p>
+                        <p class="text-sm font-bold text-primary" id="chart-avg">892</p>
                     </div>
                     <div class="text-center">
                         <p class="text-[10px] text-slate-400 uppercase">Max</p>
-                        <p class="text-sm font-bold text-orange-500">9.4</p>
+                        <p class="text-sm font-bold text-orange-500">1050</p>
                     </div>
                 </div>
             </div>
@@ -399,19 +342,192 @@
     </div>
 
     <script>
-        const ctx = document.getElementById('consumptionChart').getContext('2d');
+        const consumptionData = {
+            month: {
+                avg: 892,
+                best: 780,
+                worst: 1050,
+                hours: 48,
+                distance: 185,
+                fuel: 5352,
+                cost: 7707,
+                avgPerDay: 89,
+                change: '-3.2%',
+                chartLabels: ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb'],
+                chartData: [920, 850, 890, 780, 920, 890]
+            },
+            quarter: {
+                avg: 2850,
+                best: 2400,
+                worst: 3200,
+                hours: 156,
+                distance: 620,
+                fuel: 8550,
+                cost: 12312,
+                avgPerDay: 87,
+                change: '+2.1%',
+                chartLabels: ['Q3 2025', 'Q4 2025', 'Q1 2026'],
+                chartData: [2650, 2980, 2850]
+            },
+            year: {
+                avg: 9850,
+                best: 8200,
+                worst: 11500,
+                hours: 520,
+                distance: 2100,
+                fuel: 9850,
+                cost: 14184,
+                avgPerDay: 85,
+                change: '+5.8%',
+                chartLabels: ['2022', '2023', '2024', '2025', '2026'],
+                chartData: [8200, 9600, 9800, 10200, 10450]
+            }
+        };
 
+        let currentPeriod = 'month';
+        let chart;
+
+        function updateUI(data) {
+            const periodLabels = {
+                month: 'Last 6 Months',
+                quarter: 'Last 3 Quarters',
+                year: 'Last 5 Years'
+            };
+            const periodUnits = {
+                month: 'L/month',
+                quarter: 'L/quarter',
+                year: 'L/year'
+            };
+            document.getElementById('period-label').textContent = periodLabels[currentPeriod];
+            document.getElementById('avg-unit').textContent = periodUnits[currentPeriod];
+            document.getElementById('avg-value').textContent = data.avg;
+            document.getElementById('best-value').textContent = data.best;
+            document.getElementById('worst-value').textContent = data.worst;
+            document.getElementById('hours-value').innerHTML = data.hours + '<span class="text-[10px] font-normal text-slate-400">hrs</span>';
+            document.getElementById('distance-value').innerHTML = data.distance + '<span class="text-xs font-normal text-slate-400 ml-1">nm</span>';
+            document.getElementById('distance-change').textContent = data.change;
+            document.getElementById('fuel-value').innerHTML = data.fuel.toLocaleString() + '<span class="text-xs font-normal text-slate-400 ml-1">L</span>';
+            document.getElementById('cost-value').textContent = '€' + data.cost.toLocaleString();
+            document.getElementById('avg-per-day').innerHTML = data.avgPerDay + '<span class="text-xs font-normal text-slate-400 ml-1">L</span>';
+
+            document.getElementById('chart-avg').textContent = data.avg;
+
+            document.querySelectorAll('.flex.justify-between.mt-3 .text-center .text-sm')[0].textContent = Math.min(...data.chartData) + ' L';
+            document.querySelectorAll('.flex.justify-between.mt-3 .text-center .text-sm')[1].textContent = data.avg + ' L';
+            document.querySelectorAll('.flex.justify-between.mt-3 .text-center .text-sm')[2].textContent = Math.max(...data.chartData) + ' L';
+
+            updateChart(data);
+        }
+
+        function updateChart(data) {
+            if (chart) chart.destroy();
+            const ctx = document.getElementById('consumptionChart').getContext('2d');
+            const gradient = ctx.createLinearGradient(0, 0, 0, 160);
+            gradient.addColorStop(0, 'rgba(245, 0, 0, 0.3)');
+            gradient.addColorStop(1, 'rgba(245, 0, 0, 0)');
+
+            const maxVal = Math.max(...data.chartData);
+            const minVal = Math.min(...data.chartData);
+            const yMin = Math.floor(minVal * 0.8 / 100) * 100;
+            const yMax = Math.ceil(maxVal * 1.2 / 100) * 100;
+
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.chartLabels,
+                    datasets: [{
+                        label: 'Liters',
+                        data: data.chartData,
+                        borderColor: '#f50000',
+                        backgroundColor: gradient,
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#f50000',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 4,
+                        pointHoverRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: 'rgba(35, 15, 15, 0.9)',
+                            titleColor: '#fff',
+                            bodyColor: '#fff',
+                            padding: 10,
+                            cornerRadius: 8,
+                            displayColors: false,
+                            callbacks: {
+                                label: function (context) {
+                                    return context.parsed.y + ' L';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false },
+                            ticks: {
+                                color: '#94a3b8',
+                                font: { size: 10, family: 'Montserrat' }
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: 'rgba(148, 163, 184, 0.1)',
+                                drawBorder: false
+                            },
+                            ticks: {
+                                color: '#94a3b8',
+                                font: { size: 10, family: 'Montserrat' }
+                            },
+                            min: yMin,
+                            max: yMax
+                        }
+                    }
+                }
+            });
+        }
+
+        function setPeriod(period) {
+            currentPeriod = period;
+            const btnMonth = document.getElementById('btn-month');
+            const btnQuarter = document.getElementById('btn-quarter');
+            const btnYear = document.getElementById('btn-year');
+            
+            const activeClass = 'period-btn-active flex-1 py-2.5 rounded-xl text-xs font-semibold text-white transition-all';
+            const inactiveClass = 'flex-1 py-2.5 rounded-xl text-xs font-semibold text-slate-500 dark:text-slate-400 bg-white dark:bg-white/5 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-white/10 transition-all';
+            
+            btnMonth.className = period === 'month' ? activeClass : inactiveClass;
+            btnQuarter.className = period === 'quarter' ? activeClass : inactiveClass;
+            btnYear.className = period === 'year' ? activeClass : inactiveClass;
+            
+            updateUI(consumptionData[period]);
+        }
+
+        const initData = consumptionData.month;
+        const ctx = document.getElementById('consumptionChart').getContext('2d');
         const gradient = ctx.createLinearGradient(0, 0, 0, 160);
         gradient.addColorStop(0, 'rgba(245, 0, 0, 0.3)');
         gradient.addColorStop(1, 'rgba(245, 0, 0, 0)');
 
-        new Chart(ctx, {
+        const maxVal = Math.max(...initData.chartData);
+        const minVal = Math.min(...initData.chartData);
+        const yMin = Math.floor(minVal * 0.8 / 100) * 100;
+        const yMax = Math.ceil(maxVal * 1.2 / 100) * 100;
+
+        chart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                labels: initData.chartLabels,
                 datasets: [{
-                    label: 'L/100km',
-                    data: [7.8, 6.9, 7.2, 6.8],
+                    label: 'Liters',
+                    data: initData.chartData,
                     borderColor: '#f50000',
                     backgroundColor: gradient,
                     borderWidth: 2,
@@ -438,7 +554,7 @@
                         displayColors: false,
                         callbacks: {
                             label: function (context) {
-                                return context.parsed.y + ' L/100km';
+                                return context.parsed.y + ' L';
                             }
                         }
                     }
@@ -463,8 +579,8 @@
                                 return value;
                             }
                         },
-                        min: 4,
-                        max: 12
+                        min: yMin,
+                        max: yMax
                     }
                 }
             }
