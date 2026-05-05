@@ -145,7 +145,8 @@
                     <div class="group flex-1">
                         <label
                             class="block text-xs font-medium text-gray-500 dark:text-gray-400 ml-4 mb-2 uppercase tracking-wider"
-                            for="length">Length (m)</label>
+                            for="length">Length (m/ft)</label>
+                        <!-- /// Drop down for units -->
                         <div class="relative">
                             <input
                                 class="w-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white text-base rounded-2xl py-4 px-6 shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-600"
@@ -154,10 +155,10 @@
                                 class="material-symbols-outlined absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors">straighten</span>
                         </div>
                     </div>
-                    <div class="group flex-1">
+                    <!-- <div class="group flex-1">
                         <label
                             class="block text-xs font-medium text-gray-500 dark:text-gray-400 ml-4 mb-2 uppercase tracking-wider"
-                            for="width">Width (m)</label>
+                            for="width">Width (m/ft)</label>
                         <div class="relative">
                             <input
                                 class="w-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white text-base rounded-2xl py-4 px-6 shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-600"
@@ -165,7 +166,7 @@
                             <span
                                 class="material-symbols-outlined absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors">straighten</span>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="group">
                     <label
@@ -177,9 +178,8 @@
                             id="fuelType">
                             <option value="" disabled selected>Select fuel type</option>
                             <option value="diesel">Diesel</option>
-                            <option value="gasoline">Gasoline</option>
-                            <option value="electric">Electric</option>
-                            <option value="hybrid">Hybrid</option>
+                            <option value="gasoline">Gasoline (95)</option>
+
                         </select>
                         <span
                             class="material-symbols-outlined absolute right-12 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors pointer-events-none">local_gas_station</span>

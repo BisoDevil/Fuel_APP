@@ -129,16 +129,16 @@
         <div
             class="mt-4 mb-2 flex items-center space-x-2 bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20 animate-pulse-slow">
             <div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_#f50000]"></div>
-            <span class="text-xs font-semibold tracking-wider text-primary uppercase">Active Pump: #04</span>
+            <span class="text-xs font-semibold tracking-wider text-primary uppercase">Fueling in Progress</span>
         </div>
 
         <!-- Central Visualization Container -->
         <div class="relative w-full flex-1 flex flex-col items-center justify-center my-6">
             <!-- Percentage Hero -->
             <div class="absolute top-[15%] z-20 text-center">
-                <div class="text-6xl font-bold text-slate-900 drop-shadow-[0_0_15px_rgba(245,0,0,0.5)]">64<span
-                        class="text-3xl align-top text-primary">%</span></div>
-                <div class="text-sm text-slate-500 tracking-widest mt-1">COMPLETED</div>
+                <div class="text-6xl font-bold text-slate-900 drop-shadow-[0_0_15px_rgba(245,0,0,0.5)]"><span
+                        class="text-3xl align-top text-primary"></span> </div>
+                <div class="text-sm text-slate-500 tracking-widest mt-1"></div>
             </div>
 
             <!-- The Fluid Cylinder -->
@@ -185,37 +185,10 @@
                 </div>
             </div>
 
-            <!-- Floating Data readout (Volume Dispensed) -->
-            <div class="absolute bottom-[5%] glass-panel px-6 py-3 rounded-xl flex flex-col items-center">
-                <span class="text-slate-500 text-xs font-medium uppercase tracking-wider mb-1">Dispensed</span>
-                <span class="text-2xl font-bold text-slate-900 tracking-wide">3,200 <span
-                        class="text-primary text-sm font-normal">L</span></span>
-            </div>
+
         </div>
 
-        <!-- Metrics Grid -->
-        <div class="w-full grid grid-cols-2 gap-4 mb-8">
-            <!-- Card 1: Cost -->
-            <div class="glass-panel p-4 rounded-xl flex flex-col border-l-2 border-l-primary">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-slate-500 text-xs uppercase tracking-wider">Current Cost</span>
-                    <span class="material-symbols-outlined text-slate-300 text-sm">attach_money</span>
-                </div>
-                <div class="text-2xl font-bold text-primary drop-shadow-[0_0_8px_rgba(245,0,0,0.4)]">$5,420</div>
-                <div class="text-xs text-slate-400 mt-1">@ $1.69 / L</div>
-            </div>
 
-            <!-- Card 2: Target -->
-            <div class="glass-panel p-4 rounded-xl flex flex-col">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-slate-500 text-xs uppercase tracking-wider">Target Vol</span>
-                    <span class="material-symbols-outlined text-slate-300 text-sm">local_gas_station</span>
-                </div>
-                <div class="text-2xl font-bold text-slate-900">5,000 <span
-                        class="text-sm font-normal text-slate-500">L</span></div>
-                <div class="text-xs text-slate-400 mt-1">~12 min remaining</div>
-            </div>
-        </div>
 
         <!-- Slide to Stop Action -->
         <div
